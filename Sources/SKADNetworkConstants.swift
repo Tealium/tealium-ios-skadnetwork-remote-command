@@ -16,10 +16,12 @@ enum SKADNetworkConstants {
     static let seperator: Character = ","
 
     struct Commands {
+        static let initialize = "initialize"
         static let registerAppForAttribution = "registerappforattribution"
         static let setConversionBit = "setconversionbit"
         static let resetConversionBit = "resetconversionbit"
         static let setConversionValue = "setconversionvalue"
+        static let resetConversionValue = "resetconversionvalue"
     }
 
     struct EventKeys {
@@ -27,12 +29,13 @@ enum SKADNetworkConstants {
         static let coarseValue = "coarse_value"
         static let bitNumber = "bit_number"
         static let lockWindow = "lock_window"
+        static let sendHigherValue = "send_higher_value"
 
     }
 }
 
-public struct ConversionData: Codable {
-    public enum CoarseValue: String, Codable {
+public struct ConversionData: Codable, Equatable {
+    public enum CoarseValue: String, Codable, Comparable {
         case high
         case medium
         case low
@@ -45,8 +48,29 @@ public struct ConversionData: Codable {
             case .low: return .low
             }
         }
+        private var intValue: Int {
+            switch self {
+            case .high: return 2
+            case .medium: return 1
+            case .low: return 0
+            }
+        }
+        public static func <(lhs: Self, rhs: Self) -> Bool {
+            lhs.intValue < rhs.intValue
+        }
+        public static func >(lhs: Self, rhs: Self) -> Bool {
+            lhs.intValue > rhs.intValue
+        }
+        public static func >=(lhs: Self, rhs: Self) -> Bool {
+            lhs.intValue >= rhs.intValue
+        }
+        public static func <=(lhs: Self, rhs: Self) -> Bool {
+            lhs.intValue <= rhs.intValue
+        }
+        public static func ==(lhs: Self, rhs: Self) -> Bool {
+            lhs.intValue == rhs.intValue
+        }
     }
     internal(set) public var fineValue: Int
     internal(set) public var coarseValue: CoarseValue?
-    internal(set) public var lockWindow: Bool = false
 }

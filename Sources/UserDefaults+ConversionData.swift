@@ -9,18 +9,18 @@ import Foundation
 
 @available(iOS 11.3, *)
 extension UserDefaults {
-    private var key: String { "Tealium.RemoteCommands.fineConversionValue" }
-    var fineConversionValue: Int {
+    var conversionDataKey: String { "Tealium.RemoteCommands.ConversionData" }
+    var conversionData: ConversionData {
         get {
-            guard let data = self.data(forKey: key),
-                  let conversionData = try? JSONDecoder().decode(Int.self, from: data) else {
-                return 0
+            guard let data = self.data(forKey: conversionDataKey),
+                  let conversionData = try? JSONDecoder().decode(ConversionData.self, from: data) else {
+                return ConversionData(fineValue: 0)
             }
             return conversionData
         }
         set {
             guard let data = try? JSONEncoder().encode(newValue) else { return }
-            self.set(data, forKey: key)
+            self.set(data, forKey: conversionDataKey)
         }
     }
 }
