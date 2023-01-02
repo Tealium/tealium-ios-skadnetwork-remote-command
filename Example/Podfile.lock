@@ -1,0 +1,26 @@
+PODS:
+  - tealium-swift/Core (2.8.2)
+  - tealium-swift/RemoteCommands (2.8.2):
+    - tealium-swift/Core
+  - TealiumSKAdNetwork (1.0.0):
+    - tealium-swift/Core (~> 2.8)
+    - tealium-swift/RemoteCommands (~> 2.8)
+
+DEPENDENCIES:
+  - TealiumSKAdNetwork (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - tealium-swift
+
+EXTERNAL SOURCES:
+  TealiumSKAdNetwork:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  tealium-swift: aa249f29ee10924c1cb373c5313e91a99276bfe6
+  TealiumSKAdNetwork: 9babc5b8c82f6a0d98eac57aabce880150802dd2
+
+PODFILE CHECKSUM: 1f402f986ce8d81e8c4b84f289f0e955f902f2ca
+
+COCOAPODS: 1.11.2
