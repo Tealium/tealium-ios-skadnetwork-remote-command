@@ -8,12 +8,21 @@
 import Foundation
 import StoreKit
 
-struct SKAdNetworkConfiguration {
+public struct SKAdNetworkConfiguration {
     let sendHigherValue: Bool
 }
 
+public protocol SKAdNetworkCommand {
+    var conversionData: ConversionData { get }
+    func initialize(configuration: SKAdNetworkConfiguration)
+    func updateConversionData(fineValue: Int, coarseValue: ConversionData.CoarseValue?)
+    func updatePostbackConversionValue(lockWindow: Bool)
+    func registerAppForAttribution()
+    func resetConversionData()
+}
+
 @available(iOS 11.3, *)
-class SKAdNetworkInstance {
+class SKAdNetworkInstance: SKAdNetworkCommand {
     public weak var conversionDelegate: ConversionDelegate?
     let userDefaults: UserDefaults
     private(set) var conversionData: ConversionData
@@ -76,7 +85,9 @@ class SKAdNetworkInstance {
     }
     
     func registerAppForAttribution() {
-        SKAdNetwork.registerAppForAdNetworkAttribution()
+        if #unavailable(iOS 14.0) {
+            SKAdNetwork.registerAppForAdNetworkAttribution()
+        }
     }
     
     /// Sets conversion data to the default values even with the sendHigherValue configuration

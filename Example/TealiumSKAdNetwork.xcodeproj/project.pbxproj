@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1535CF52296342DA00605ED3 /* SKAdNetworkRemoteCommandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1535CF51296342DA00605ED3 /* SKAdNetworkRemoteCommandTests.swift */; };
+		1535CF54296349F500605ED3 /* MockSKAdNetworkCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1535CF53296349F500605ED3 /* MockSKAdNetworkCommand.swift */; };
 		4572A1E916DDB643E7D2F392 /* Pods_TealiumSKAdNetwork_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D66820781D18716ACA46210 /* Pods_TealiumSKAdNetwork_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		1535CF51296342DA00605ED3 /* SKAdNetworkRemoteCommandTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKAdNetworkRemoteCommandTests.swift; sourceTree = "<group>"; };
+		1535CF53296349F500605ED3 /* MockSKAdNetworkCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSKAdNetworkCommand.swift; sourceTree = "<group>"; };
 		385260D3CC445A799A0A26E6 /* Pods-TealiumSKAdNetwork_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TealiumSKAdNetwork_Tests.release.xcconfig"; path = "Target Support Files/Pods-TealiumSKAdNetwork_Tests/Pods-TealiumSKAdNetwork_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		55DDF07E15E0B09FBE9C0C53 /* Pods-TealiumSKAdNetwork_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TealiumSKAdNetwork_Example.debug.xcconfig"; path = "Target Support Files/Pods-TealiumSKAdNetwork_Example/Pods-TealiumSKAdNetwork_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		57B926D346CE92501CDBEA81 /* Pods-TealiumSKAdNetwork_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TealiumSKAdNetwork_Example.release.xcconfig"; path = "Target Support Files/Pods-TealiumSKAdNetwork_Example/Pods-TealiumSKAdNetwork_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			children = (
 				1535CF51296342DA00605ED3 /* SKAdNetworkRemoteCommandTests.swift */,
 				607FACEB1AFB9204008FA782 /* SKAdNetworkInstanceTests.swift */,
+				1535CF53296349F500605ED3 /* MockSKAdNetworkCommand.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -345,6 +348,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1535CF54296349F500605ED3 /* MockSKAdNetworkCommand.swift in Sources */,
 				607FACEC1AFB9204008FA782 /* SKAdNetworkInstanceTests.swift in Sources */,
 				1535CF52296342DA00605ED3 /* SKAdNetworkRemoteCommandTests.swift in Sources */,
 			);

@@ -15,8 +15,9 @@ public protocol ConversionDelegate: AnyObject {
 @available(iOS 11.3, *)
 public class SKAdNetworkRemoteCommand: RemoteCommand {
     override public var version: String? { SKADNetworkConstants.version }
-    let instance = SKAdNetworkInstance()
-    public init(type: RemoteCommandType, delegate: ConversionDelegate?) {
+    let instance: SKAdNetworkCommand
+    public init(instance: SKAdNetworkCommand? = nil, type: RemoteCommandType, delegate: ConversionDelegate?) {
+        self.instance = instance ?? SKAdNetworkInstance(conversionDelegate: delegate)
         weak var weakSelf: SKAdNetworkRemoteCommand?
         super.init(commandId: SKADNetworkConstants.commandId, description: SKADNetworkConstants.description, type: type) { response in
             print(response)
@@ -62,9 +63,7 @@ public class SKAdNetworkRemoteCommand: RemoteCommand {
         case SKADNetworkConstants.Commands.resetConversionValue:
             instance.resetConversionData()
         case SKADNetworkConstants.Commands.registerAppForAttribution:
-            if #unavailable(iOS 14.0) {
-                instance.registerAppForAttribution()
-            }
+            instance.registerAppForAttribution()
         default:
             break
         }
