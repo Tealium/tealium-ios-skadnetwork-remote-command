@@ -5,7 +5,12 @@
 //  Created by Enrico Zannini on 02/01/23.
 //
 
+#if COCOAPODS
 import TealiumSwift
+#else
+import TealiumCore
+import TealiumRemoteCommands
+#endif
 
 public protocol ConversionDelegate: AnyObject {
     func onConversionUpdate(conversionData: ConversionData, lockWindow: Bool)
