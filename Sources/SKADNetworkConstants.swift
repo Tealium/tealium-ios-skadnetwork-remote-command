@@ -9,8 +9,8 @@ import Foundation
 import StoreKit
 
 enum SKADNetworkConstants {
-    static let commandId = "conversioncommand"
-    static let description = "Conversion Remote Command"
+    static let commandId = "skadnetwork"
+    static let description = "SKAdNetwork Remote Command"
     static let commandName = "command_name"
     static let version = "1.0.0"
     static let seperator: Character = ","
