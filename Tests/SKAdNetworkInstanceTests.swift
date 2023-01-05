@@ -2,7 +2,7 @@ import XCTest
 @testable import TealiumSKAdNetwork
 
 
-class CallbackDelegate: ConversionDelegate {
+class CallbackDelegate: SKAdNetworkConversionDelegate {
     
     var onUpdateCallback: (ConversionData, Bool) -> ()
     var onCompletedCallback: (Error?) -> ()

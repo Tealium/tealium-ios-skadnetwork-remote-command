@@ -1,0 +1,294 @@
+{
+    "config": {
+    },
+    "mappings": {
+        "application_bit_number":"bit_number",
+        "application_fine_value":"fine_value",
+        "application_coarse_value":"coarse_value",
+        "application_send_higher_value":"send_higher_value",
+        "journey_step": "fine_value",
+        "application_limit_to_first_n_bits": "limit_to_first_n_bits",
+        "application_limit_to_last_n_bits": "limit_to_last_n_bits"
+    },
+    "commands": {
+        "tealium_event:launch": "initialize,registerappforattribution,setconversionvalue",
+        "spend_money":"setconversionvalue",
+        "event0": "setconversionbit",
+        "event1": "setconversionbit",
+        "event2": "setconversionbit",
+        "event3": "setconversionbit",
+        "event4": "setconversionbit",
+        "event5": "setconversionbit",
+        "reset_conversion_value": "resetconversionvalue",
+        "configure_skadnetwork_command": "initialize",
+        "journey_step": "setconversionvalue"
+    },
+    "statics": {
+        "launch": {
+            "application_fine_value": 0,
+            "application_coarse_value": "low"
+        },
+        "strategy:money,spending_type:low": {
+            "application_coarse_value": "low"
+        },
+        "strategy:money,spending_type:medium": {
+            "application_coarse_value": "medium"
+        },
+        "strategy:money,spending_type:premium": {
+            "application_coarse_value": "high"
+        },
+        "strategy:money,money_spent:0": {
+            "application_fine_value": 0
+        },
+        "strategy:money,money_spent:10": {
+            "application_fine_value": 1
+        },
+        "strategy:money,money_spent:20": {
+            "application_fine_value": 2
+        },
+        "strategy:money,money_spent:30": {
+            "application_fine_value": 3
+        },
+        "strategy:money,money_spent:40": {
+            "application_fine_value": 4
+        },
+        "strategy:money,money_spent:50": {
+            "application_fine_value": 5
+        },
+        "strategy:money,money_spent:60": {
+            "application_fine_value": 6
+        },
+        "strategy:money,money_spent:70": {
+            "application_fine_value": 7
+        },
+        "strategy:money,money_spent:80": {
+            "application_fine_value": 8
+        },
+        "strategy:money,money_spent:90": {
+            "application_fine_value": 9
+        },
+        "strategy:money,money_spent:100": {
+            "application_fine_value": 10
+        },
+        "strategy:money,money_spent:110": {
+            "application_fine_value": 11
+        },
+        "strategy:money,money_spent:120": {
+            "application_fine_value": 12
+        },
+        "strategy:money,money_spent:130": {
+            "application_fine_value": 13
+        },
+        "strategy:money,money_spent:140": {
+            "application_fine_value": 14
+        },
+        "strategy:money,money_spent:150": {
+            "application_fine_value": 15
+        },
+        "strategy:money,money_spent:160": {
+            "application_fine_value": 16
+        },
+        "strategy:money,money_spent:170": {
+            "application_fine_value": 17
+        },
+        "strategy:money,money_spent:180": {
+            "application_fine_value": 18
+        },
+        "strategy:money,money_spent:190": {
+            "application_fine_value": 19
+        },
+        "strategy:money,money_spent:200": {
+            "application_fine_value": 20
+        },
+        "strategy:money,money_spent:210": {
+            "application_fine_value": 21
+        },
+        "strategy:money,money_spent:220": {
+            "application_fine_value": 22
+        },
+        "strategy:money,money_spent:230": {
+            "application_fine_value": 23
+        },
+        "strategy:money,money_spent:240": {
+            "application_fine_value": 24
+        },
+        "strategy:money,money_spent:250": {
+            "application_fine_value": 25
+        },
+        "strategy:money,money_spent:260": {
+            "application_fine_value": 26
+        },
+        "strategy:money,money_spent:270": {
+            "application_fine_value": 27
+        },
+        "strategy:money,money_spent:280": {
+            "application_fine_value": 28
+        },
+        "strategy:money,money_spent:290": {
+            "application_fine_value": 29
+        },
+        "strategy:money,money_spent:300": {
+            "application_fine_value": 30
+        },
+        "strategy:money,money_spent:310": {
+            "application_fine_value": 31
+        },
+        "strategy:money,money_spent:320": {
+            "application_fine_value": 32
+        },
+        "strategy:money,money_spent:330": {
+            "application_fine_value": 33
+        },
+        "strategy:money,money_spent:340": {
+            "application_fine_value": 34
+        },
+        "strategy:money,money_spent:350": {
+            "application_fine_value": 35
+        },
+        "strategy:money,money_spent:360": {
+            "application_fine_value": 36
+        },
+        "strategy:money,money_spent:370": {
+            "application_fine_value": 37
+        },
+        "strategy:money,money_spent:380": {
+            "application_fine_value": 38
+        },
+        "strategy:money,money_spent:390": {
+            "application_fine_value": 39
+        },
+        "strategy:money,money_spent:400": {
+            "application_fine_value": 40
+        },
+        "strategy:money,money_spent:410": {
+            "application_fine_value": 41
+        },
+        "strategy:money,money_spent:420": {
+            "application_fine_value": 42
+        },
+        "strategy:money,money_spent:430": {
+            "application_fine_value": 43
+        },
+        "strategy:money,money_spent:440": {
+            "application_fine_value": 44
+        },
+        "strategy:money,money_spent:450": {
+            "application_fine_value": 45
+        },
+        "strategy:money,money_spent:460": {
+            "application_fine_value": 46
+        },
+        "strategy:money,money_spent:470": {
+            "application_fine_value": 47
+        },
+        "strategy:money,money_spent:480": {
+            "application_fine_value": 48
+        },
+        "strategy:money,money_spent:490": {
+            "application_fine_value": 49
+        },
+        "strategy:money,money_spent:500": {
+            "application_fine_value": 50
+        },
+        "strategy:money,money_spent:510": {
+            "application_fine_value": 51
+        },
+        "strategy:money,money_spent:520": {
+            "application_fine_value": 52
+        },
+        "strategy:money,money_spent:530": {
+            "application_fine_value": 53
+        },
+        "strategy:money,money_spent:540": {
+            "application_fine_value": 54
+        },
+        "strategy:money,money_spent:550": {
+            "application_fine_value": 55
+        },
+        "strategy:money,money_spent:560": {
+            "application_fine_value": 56
+        },
+        "strategy:money,money_spent:570": {
+            "application_fine_value": 57
+        },
+        "strategy:money,money_spent:580": {
+            "application_fine_value": 58
+        },
+        "strategy:money,money_spent:590": {
+            "application_fine_value": 59
+        },
+        "strategy:money,money_spent:600": {
+            "application_fine_value": 60
+        },
+        "strategy:money,money_spent:610": {
+            "application_fine_value": 61
+        },
+        "strategy:money,money_spent:620": {
+            "application_fine_value": 62
+        },
+        "strategy:money,money_spent:630": {
+            "application_fine_value": 63
+        },
+        "strategy:events,event0": {
+            "application_bit_number": 0,
+            "application_coarse_value": "low"
+        },
+        "strategy:events,event1": {
+            "application_bit_number": 1,
+            "application_coarse_value": "low"
+        },
+        "strategy:events,event2": {
+            "application_bit_number": 2,
+            "application_coarse_value": "medium"
+        },
+        "strategy:events,event3": {
+            "application_bit_number": 3,
+            "application_coarse_value": "medium"
+        },
+        "strategy:events,event4": {
+            "application_bit_number": 4,
+            "application_coarse_value": "medium"
+        },
+        "strategy:events,event5": {
+            "application_bit_number": 5,
+            "application_coarse_value": "high"
+        },
+        "strategy:journey,journey_step:1": {
+            "application_coarse_value": "low"
+        },
+        "strategy:journey,journey_step:5": {
+            "application_coarse_value": "medium"
+        },
+        "strategy:journey,journey_step:10": {
+            "application_coarse_value": "high"
+        },
+        "strategy:mixed_events_steps,event0": {
+            "application_bit_number": 3,
+        },
+        "strategy:mixed_events_steps,event1": {
+            "application_bit_number": 4,
+        },
+        "strategy:mixed_events_steps,event2": {
+            "application_bit_number": 5,
+        },
+        "strategy:mixed_events_steps,tealium_event:journey_step": {
+            "application_limit_to_first_n_bits": 3
+        }
+        "strategy:mixed_events_steps,journey_step:0": {
+            "application_coarse_value": "low"
+        },
+        "strategy:mixed_events_steps,journey_step:1": {
+            "application_coarse_value": "low"
+        },
+        "strategy:mixed_events_steps,journey_step:2": {
+            "application_coarse_value": "low"
+        },
+        "strategy:mixed_events_steps,journey_step:3": {
+            "application_coarse_value": "medium"
+        },
+        "strategy:mixed,journey_step:6": {
+            "application_fine_value": 6,
+            "application_coarse_value": "high"
+        }
+    }
+}

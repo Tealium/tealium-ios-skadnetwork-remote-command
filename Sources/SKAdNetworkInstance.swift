@@ -23,11 +23,11 @@ public protocol SKAdNetworkCommand {
 
 @available(iOS 11.3, *)
 class SKAdNetworkInstance: SKAdNetworkCommand {
-    public weak var conversionDelegate: ConversionDelegate?
+    public weak var conversionDelegate: SKAdNetworkConversionDelegate?
     let userDefaults: UserDefaults
     private(set) var conversionData: ConversionData
     var configuration = SKAdNetworkConfiguration(sendHigherValue: false)
-    init(conversionDelegate: ConversionDelegate? = nil, userDefaults: UserDefaults? = nil) {
+    init(conversionDelegate: SKAdNetworkConversionDelegate? = nil, userDefaults: UserDefaults? = nil) {
         self.conversionDelegate = conversionDelegate
         let defaults = userDefaults ?? UserDefaults(suiteName: "Tealium.RemoteCommands.SKAdNetwork") ?? .standard
         self.userDefaults = defaults

@@ -12,7 +12,7 @@ import TealiumCore
 import TealiumRemoteCommands
 #endif
 
-public protocol ConversionDelegate: AnyObject {
+public protocol SKAdNetworkConversionDelegate: AnyObject {
     func onConversionUpdate(conversionData: ConversionData, lockWindow: Bool)
     func onConversionUpdateCompleted(error: Error?)
 }
@@ -21,11 +21,10 @@ public protocol ConversionDelegate: AnyObject {
 public class SKAdNetworkRemoteCommand: RemoteCommand {
     override public var version: String? { SKADNetworkConstants.version }
     let instance: SKAdNetworkCommand
-    public init(instance: SKAdNetworkCommand? = nil, type: RemoteCommandType, delegate: ConversionDelegate?) {
+    public init(instance: SKAdNetworkCommand? = nil, type: RemoteCommandType, delegate: SKAdNetworkConversionDelegate?) {
         self.instance = instance ?? SKAdNetworkInstance(conversionDelegate: delegate)
         weak var weakSelf: SKAdNetworkRemoteCommand?
         super.init(commandId: SKADNetworkConstants.commandId, description: SKADNetworkConstants.description, type: type) { response in
-            print(response)
             guard let self = weakSelf,
                   let payload = response.payload else {
                 return

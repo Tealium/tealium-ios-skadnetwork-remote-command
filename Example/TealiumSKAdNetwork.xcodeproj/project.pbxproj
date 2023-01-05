@@ -10,12 +10,12 @@
 		1535CFA929644E5700605ED3 /* SKAdNetworkInstanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1535CFA129644E4700605ED3 /* SKAdNetworkInstanceTests.swift */; };
 		1535CFAA29644E5700605ED3 /* SKAdNetworkRemoteCommandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1535CFA229644E4700605ED3 /* SKAdNetworkRemoteCommandTests.swift */; };
 		1535CFAB29644E5700605ED3 /* MockSKAdNetworkCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1535CFA329644E4700605ED3 /* MockSKAdNetworkCommand.swift */; };
+		15D3B3B32965D5690078A1B3 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D3B3B22965D5690078A1B3 /* AppView.swift */; };
+		15D3B3B52965D64B0078A1B3 /* TealiumHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D3B3B42965D64B0078A1B3 /* TealiumHelper.swift */; };
+		15D3B3B72965D7AF0078A1B3 /* skadnetworkcommand.json in Resources */ = {isa = PBXBuildFile; fileRef = 15D3B3B62965D7AF0078A1B3 /* skadnetworkcommand.json */; };
 		4572A1E916DDB643E7D2F392 /* Pods_TealiumSKAdNetwork_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D66820781D18716ACA46210 /* Pods_TealiumSKAdNetwork_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
-		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
-		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		D13E16F39026AEBD6A8861D4 /* Pods_TealiumSKAdNetwork_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA31BC5B9B9E808844FE66D /* Pods_TealiumSKAdNetwork_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +33,9 @@
 		1535CFA129644E4700605ED3 /* SKAdNetworkInstanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKAdNetworkInstanceTests.swift; sourceTree = "<group>"; };
 		1535CFA229644E4700605ED3 /* SKAdNetworkRemoteCommandTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKAdNetworkRemoteCommandTests.swift; sourceTree = "<group>"; };
 		1535CFA329644E4700605ED3 /* MockSKAdNetworkCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockSKAdNetworkCommand.swift; sourceTree = "<group>"; };
+		15D3B3B22965D5690078A1B3 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		15D3B3B42965D64B0078A1B3 /* TealiumHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TealiumHelper.swift; sourceTree = "<group>"; };
+		15D3B3B62965D7AF0078A1B3 /* skadnetworkcommand.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = skadnetworkcommand.json; sourceTree = "<group>"; };
 		385260D3CC445A799A0A26E6 /* Pods-TealiumSKAdNetwork_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TealiumSKAdNetwork_Tests.release.xcconfig"; path = "Target Support Files/Pods-TealiumSKAdNetwork_Tests/Pods-TealiumSKAdNetwork_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		55DDF07E15E0B09FBE9C0C53 /* Pods-TealiumSKAdNetwork_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TealiumSKAdNetwork_Example.debug.xcconfig"; path = "Target Support Files/Pods-TealiumSKAdNetwork_Example/Pods-TealiumSKAdNetwork_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		57B926D346CE92501CDBEA81 /* Pods-TealiumSKAdNetwork_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TealiumSKAdNetwork_Example.release.xcconfig"; path = "Target Support Files/Pods-TealiumSKAdNetwork_Example/Pods-TealiumSKAdNetwork_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -40,10 +43,7 @@
 		607FACD01AFB9204008FA782 /* TealiumSKAdNetwork_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TealiumSKAdNetwork_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* TealiumSKAdNetwork_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TealiumSKAdNetwork_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D66820781D18716ACA46210 /* Pods_TealiumSKAdNetwork_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TealiumSKAdNetwork_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4093A49C598824990B2A561 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -107,12 +107,12 @@
 		607FACD21AFB9204008FA782 /* Example for TealiumSKAdNetwork */ = {
 			isa = PBXGroup;
 			children = (
+				15D3B3B62965D7AF0078A1B3 /* skadnetworkcommand.json */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
-				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
+				15D3B3B22965D5690078A1B3 /* AppView.swift */,
+				15D3B3B42965D64B0078A1B3 /* TealiumHelper.swift */,
 			);
 			name = "Example for TealiumSKAdNetwork";
 			path = TealiumSKAdNetwork;
@@ -243,9 +243,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
-				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
+				15D3B3B72965D7AF0078A1B3 /* skadnetworkcommand.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,7 +329,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				15D3B3B32965D5690078A1B3 /* AppView.swift in Sources */,
+				15D3B3B52965D64B0078A1B3 /* TealiumHelper.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,25 +354,6 @@
 			targetProxy = 607FACE61AFB9204008FA782 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		607FACD91AFB9204008FA782 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				607FACDA1AFB9204008FA782 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		607FACDE1AFB9204008FA782 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				607FACDF1AFB9204008FA782 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		607FACED1AFB9204008FA782 /* Debug */ = {
@@ -420,7 +401,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -466,7 +447,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -480,7 +461,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TealiumSKAdNetwork/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
@@ -496,7 +477,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TealiumSKAdNetwork/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
