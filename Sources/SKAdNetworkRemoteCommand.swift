@@ -21,6 +21,7 @@ public protocol SKAdNetworkConversionDelegate: AnyObject {
 public class SKAdNetworkRemoteCommand: RemoteCommand {
     override public var version: String? { SKADNetworkConstants.version }
     let instance: SKAdNetworkCommand
+    let limiter = ValueBitLimiter()
     public init(instance: SKAdNetworkCommand? = nil, type: RemoteCommandType, delegate: SKAdNetworkConversionDelegate?) {
         self.instance = instance ?? SKAdNetworkInstance(conversionDelegate: delegate)
         weak var weakSelf: SKAdNetworkRemoteCommand?
@@ -59,8 +60,13 @@ public class SKAdNetworkRemoteCommand: RemoteCommand {
             updateConversionData(fineValue: instance.conversionData.fineValue & ~(1 << bitNumber),
                                  payload: payload)
         case SKADNetworkConstants.Commands.setConversionValue:
-            guard let fineValue = payload[SKADNetworkConstants.EventKeys.fineValue] as? Int else {
+            guard var fineValue = payload[SKADNetworkConstants.EventKeys.fineValue] as? Int else {
                 return
+            }
+            if let sideLimit = getSideLimit(payload: payload) {
+                fineValue = limiter.setValue(fineValue,
+                                             on: instance.conversionData.fineValue,
+                                             fromSideLimit: sideLimit)
             }
             updateConversionData(fineValue: fineValue,
                                  payload: payload)
@@ -99,6 +105,15 @@ public class SKAdNetworkRemoteCommand: RemoteCommand {
             return nil
         }
         return ConversionData.CoarseValue(rawValue: coarseValueString)
+    }
+    
+    func getSideLimit(payload: [String: Any]) -> ValueBitLimiter.SideLimit? {
+        if let leftLimit = payload[SKADNetworkConstants.EventKeys.limitToHighestNBits] as? Int {
+            return .left(leftLimit)
+        } else if let rightLimit = payload[SKADNetworkConstants.EventKeys.limitToLowestNBits] as? Int {
+            return .right(rightLimit)
+        }
+        return nil
     }
     
 }

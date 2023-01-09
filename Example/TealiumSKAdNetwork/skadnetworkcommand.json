@@ -7,8 +7,8 @@
         "application_coarse_value":"coarse_value",
         "application_send_higher_value":"send_higher_value",
         "journey_step": "fine_value",
-        "application_limit_to_first_n_bits": "limit_to_first_n_bits",
-        "application_limit_to_last_n_bits": "limit_to_last_n_bits"
+        "application_limit_to_highest_n_bits": "limit_to_highest_n_bits",
+        "application_limit_to_lowest_n_bits": "limit_to_lowest_n_bits"
     },
     "commands": {
         "tealium_event:launch": "initialize,registerappforattribution,setconversionvalue",
@@ -21,7 +21,8 @@
         "event5": "setconversionbit",
         "reset_conversion_value": "resetconversionvalue",
         "configure_skadnetwork_command": "initialize",
-        "journey_step": "setconversionvalue"
+        "journey_step": "setconversionvalue",
+        "strategy:mixed_value_steps,tealium_event:value_change":"setconversionvalue"
     },
     "statics": {
         "launch": {
@@ -272,8 +273,8 @@
             "application_bit_number": 5,
         },
         "strategy:mixed_events_steps,tealium_event:journey_step": {
-            "application_limit_to_first_n_bits": 3
-        }
+            "application_limit_to_lowest_n_bits": 3
+        },
         "strategy:mixed_events_steps,journey_step:0": {
             "application_coarse_value": "low"
         },
@@ -286,8 +287,28 @@
         "strategy:mixed_events_steps,journey_step:3": {
             "application_coarse_value": "medium"
         },
-        "strategy:mixed,journey_step:6": {
-            "application_fine_value": 6,
+        "strategy:mixed_events_steps,journey_step:6": {
+            "application_coarse_value": "high"
+        },
+        "strategy:mixed_value_steps,tealium_event:journey_step": {
+            "application_limit_to_lowest_n_bits": 3
+        },
+        "strategy:mixed_value_steps,tealium_event:value_change": {
+            "application_limit_to_highest_n_bits": 3
+        },
+        "strategy:mixed_value_steps,journey_step:0": {
+            "application_coarse_value": "low"
+        },
+        "strategy:mixed_value_steps,journey_step:1": {
+            "application_coarse_value": "low"
+        },
+        "strategy:mixed_value_steps,journey_step:2": {
+            "application_coarse_value": "low"
+        },
+        "strategy:mixed_value_steps,journey_step:3": {
+            "application_coarse_value": "medium"
+        },
+        "strategy:mixed_value_steps,journey_step:6": {
             "application_coarse_value": "high"
         }
     }

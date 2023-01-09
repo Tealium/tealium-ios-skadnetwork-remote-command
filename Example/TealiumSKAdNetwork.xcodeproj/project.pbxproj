@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1520113F296C2665005E8D89 /* ValueBitLimiterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1520113E296C2665005E8D89 /* ValueBitLimiterTests.swift */; };
 		1535CFA929644E5700605ED3 /* SKAdNetworkInstanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1535CFA129644E4700605ED3 /* SKAdNetworkInstanceTests.swift */; };
 		1535CFAA29644E5700605ED3 /* SKAdNetworkRemoteCommandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1535CFA229644E4700605ED3 /* SKAdNetworkRemoteCommandTests.swift */; };
 		1535CFAB29644E5700605ED3 /* MockSKAdNetworkCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1535CFA329644E4700605ED3 /* MockSKAdNetworkCommand.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1520113E296C2665005E8D89 /* ValueBitLimiterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueBitLimiterTests.swift; sourceTree = "<group>"; };
 		1535CFA129644E4700605ED3 /* SKAdNetworkInstanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKAdNetworkInstanceTests.swift; sourceTree = "<group>"; };
 		1535CFA229644E4700605ED3 /* SKAdNetworkRemoteCommandTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKAdNetworkRemoteCommandTests.swift; sourceTree = "<group>"; };
 		1535CFA329644E4700605ED3 /* MockSKAdNetworkCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockSKAdNetworkCommand.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				1535CFA129644E4700605ED3 /* SKAdNetworkInstanceTests.swift */,
 				1535CFA229644E4700605ED3 /* SKAdNetworkRemoteCommandTests.swift */,
 				1535CFA329644E4700605ED3 /* MockSKAdNetworkCommand.swift */,
+				1520113E296C2665005E8D89 /* ValueBitLimiterTests.swift */,
 			);
 			name = Tests;
 			path = ../Tests;
@@ -341,6 +344,7 @@
 			files = (
 				1535CFAB29644E5700605ED3 /* MockSKAdNetworkCommand.swift in Sources */,
 				1535CFA929644E5700605ED3 /* SKAdNetworkInstanceTests.swift in Sources */,
+				1520113F296C2665005E8D89 /* ValueBitLimiterTests.swift in Sources */,
 				1535CFAA29644E5700605ED3 /* SKAdNetworkRemoteCommandTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -30,6 +30,8 @@ enum SKADNetworkConstants {
         static let bitNumber = "bit_number"
         static let lockWindow = "lock_window"
         static let sendHigherValue = "send_higher_value"
+        static let limitToHighestNBits = "limit_to_highest_n_bits"
+        static let limitToLowestNBits = "limit_to_lowest_n_bits"
 
     }
 }

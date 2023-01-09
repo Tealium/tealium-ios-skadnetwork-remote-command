@@ -37,8 +37,8 @@ struct AppView: App {
                         NavigationLink("Money Spent", destination: MoneyStrategyView())
                         NavigationLink("Jorney Steps", destination: JourneyStrategyView())
                         NavigationLink("Events Based", destination: EventStrategyView())
-                        NavigationLink("Mixed Events/Steps", destination: MixedStrategyView())
-                        NavigationLink("Mixed Value/Steps", destination: MixedStrategyView())
+                        NavigationLink("Mixed Events/Steps", destination: MixedEventsStepsStrategyView())
+                        NavigationLink("Mixed Value/Steps", destination: MixedValueStepsStrategyView())
                         Toggle("Send Higher Value", isOn: Binding<Bool>.init(get: {
                             self.sendHigherValue
                         }, set: { newValue in
@@ -112,10 +112,12 @@ struct JourneyStrategyView: View {
         List {
             Text("Jorney Step: \(journeyStep)")
             Button {
-                journeyStep += 1
-                TealiumHelper.shared.track(title: "journey_step", data: ["journey_step": journeyStep])
+                if journeyStep < 63 {
+                    journeyStep += 1
+                    TealiumHelper.shared.track(title: "journey_step", data: ["journey_step": journeyStep])
+                }
             } label: {
-                Text("Next journey step")
+                Text("Next journey step [\(journeyStep+1)]")
             }.disabled(journeyStep >= 63)
         }.navigationTitle("Journey Steps Strategy")
             .onAppear {
@@ -135,7 +137,7 @@ struct EventStrategyView: View {
                     TealiumHelper.shared.track(title: "event\(index)", data: [:])
                 } label: {
                     Text("Set Event/Flag \(index)")
-                }
+                }.disabled(events[index] == 1)
             }
         }.navigationTitle("Events Strategy")
             .onAppear {
@@ -144,34 +146,67 @@ struct EventStrategyView: View {
     }
 }
 
-struct MixedStrategyView: View {
+struct MixedEventsStepsStrategyView: View {
     @State var events: [Int] = [0, 0, 0]
     @State var journeyStep = 0
     var body: some View {
         List {
             Text("Events/Flags: \(events.reversed().description)")
-            Text("Jorney Step: \(journeyStep)")
             ForEach(events.indices, id: \.self) { index in
                 Button {
                     events[index] = 1
                     TealiumHelper.shared.track(title: "event\(index)", data: [:])
                 } label: {
                     Text("Set Event/Flag \(index)")
-                }
+                }.disabled(events[index] == 1)
             }
+            Text("Jorney Step: \(journeyStep)")
             Button {
-                if journeyStep < 8 {
-                    
-                    let value = TealiumHelper.shared.conversion?.fineValue ?? journeyStep
+                if journeyStep < 7 {
                     journeyStep += 1
-                    TealiumHelper.shared.track(title: "journey_step", data: ["journey_step": value+1])
+                    TealiumHelper.shared.track(title: "journey_step", data: ["journey_step": journeyStep])
                 }
             } label: {
-                Text("Next journey step")
-            }.disabled(journeyStep >= 8)
+                Text("Next journey step [\(journeyStep+1)]")
+            }.disabled(journeyStep >= 7)
         }.navigationTitle("Events Strategy")
             .onAppear {
                 TealiumHelper.shared.tealium?.dataLayer.add(key: "strategy", value: "mixed_events_steps", expiry: .untilRestart)
+            }
+    }
+}
+
+struct MixedValueStepsStrategyView: View {
+    @State var value = 0
+    @State var journeyStep = 0
+    var intProxy: Binding<Double>{
+            Binding<Double>(get: {
+                //returns the score as a Double
+                return Double(value)
+            }, set: {
+                value = Int($0)
+            })
+        }
+    var body: some View {
+        List {
+            Text("Value: \(value)")
+            Slider(value: intProxy, in: 0...7, onEditingChanged: { editing in
+                if !editing {
+                    TealiumHelper.shared.track(title: "value_change", data: ["application_fine_value": value])
+                }
+            })
+            Text("Jorney Step: \(journeyStep)")
+            Button {
+                if journeyStep < 7 {
+                    journeyStep += 1
+                    TealiumHelper.shared.track(title: "journey_step", data: ["journey_step": journeyStep])
+                }
+            } label: {
+                Text("Next journey step [\(journeyStep+1)]")
+            }.disabled(journeyStep >= 7)
+        }.navigationTitle("Events Strategy")
+            .onAppear {
+                TealiumHelper.shared.tealium?.dataLayer.add(key: "strategy", value: "mixed_value_steps", expiry: .untilRestart)
             }
     }
 }
