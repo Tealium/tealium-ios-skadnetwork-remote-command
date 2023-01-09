@@ -55,8 +55,10 @@ class TealiumHelper: SKAdNetworkConversionDelegate, ObservableObject {
 //                Dispatchers.TagManagement,
                 Dispatchers.RemoteCommands
             ]
+        let skadCommand = SKAdNetworkRemoteCommand(type: .local(file: "skadnetworkcommand"), delegate: self)
+        self.conversion = skadCommand.conversionData
         config.remoteCommands = [
-            SKAdNetworkRemoteCommand(type: .local(file: "skadnetworkcommand"), delegate: self)
+            skadCommand
         ]
 
         tealium = Tealium(config: config) { [weak self] response in

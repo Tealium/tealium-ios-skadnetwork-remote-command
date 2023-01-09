@@ -22,6 +22,9 @@ public class SKAdNetworkRemoteCommand: RemoteCommand {
     override public var version: String? { SKADNetworkConstants.version }
     let instance: SKAdNetworkCommand
     let limiter = ValueBitLimiter()
+    public var conversionData: ConversionData {
+        instance.conversionData
+    }
     public init(instance: SKAdNetworkCommand? = nil, type: RemoteCommandType, delegate: SKAdNetworkConversionDelegate?) {
         self.instance = instance ?? SKAdNetworkInstance(conversionDelegate: delegate)
         weak var weakSelf: SKAdNetworkRemoteCommand?
@@ -53,11 +56,11 @@ public class SKAdNetworkRemoteCommand: RemoteCommand {
             instance.initialize(configuration: getConfiguration(payload: payload))
         case SKADNetworkConstants.Commands.setConversionBit:
             guard let bitNumber = getBitNumber(payload: payload) else { return }
-            updateConversionData(fineValue: instance.conversionData.fineValue | (1 << bitNumber),
+            updateConversionData(fineValue: conversionData.fineValue | (1 << bitNumber),
                                  payload: payload)
         case SKADNetworkConstants.Commands.resetConversionBit:
             guard let bitNumber = getBitNumber(payload: payload) else { return }
-            updateConversionData(fineValue: instance.conversionData.fineValue & ~(1 << bitNumber),
+            updateConversionData(fineValue: conversionData.fineValue & ~(1 << bitNumber),
                                  payload: payload)
         case SKADNetworkConstants.Commands.setConversionValue:
             guard var fineValue = payload[SKADNetworkConstants.EventKeys.fineValue] as? Int else {
@@ -65,7 +68,7 @@ public class SKAdNetworkRemoteCommand: RemoteCommand {
             }
             if let sideLimit = getSideLimit(payload: payload) {
                 fineValue = limiter.setValue(fineValue,
-                                             on: instance.conversionData.fineValue,
+                                             on: conversionData.fineValue,
                                              fromSideLimit: sideLimit)
             }
             updateConversionData(fineValue: fineValue,

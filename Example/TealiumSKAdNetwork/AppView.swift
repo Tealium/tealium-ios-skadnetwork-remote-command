@@ -8,17 +8,26 @@
 
 import SwiftUI
 
+private let defaultStrategy = "undefined"
 class StrategyListener: ObservableObject {
-    @Published var selectedStrategy = "undefined"
+    
+    @Published var selectedStrategy = defaultStrategy
     init() {
+        self.evaluateData(data: TealiumHelper.shared.tealium!.dataLayer.all)
         TealiumHelper.shared.tealium?.dataLayer.onDataUpdated.subscribe({ data in
-            if let strategy = data["strategy"] as? String, strategy != self.selectedStrategy {
-                DispatchQueue.main.async {
-                    self.selectedStrategy = strategy
+            self.evaluateData(data: data)
+        })
+    }
+    
+    func evaluateData(data: [String: Any]) {
+        if let strategy = data["strategy"] as? String, strategy != self.selectedStrategy {
+            DispatchQueue.main.async {
+                if self.selectedStrategy != defaultStrategy {
                     self.resetConversionValue()
                 }
+                self.selectedStrategy = strategy
             }
-        })
+        }
     }
     
     func resetConversionValue() {
@@ -31,10 +40,13 @@ class StrategyListener: ObservableObject {
 struct AppView: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @ObservedObject var helper = TealiumHelper.shared
-    @State var sendHigherValue = false
+    @AppStorage("sendHigherValue") var sendHigherValue = false
     @StateObject var strategyListener = StrategyListener()
     init() {
-        TealiumHelper.shared.start()
+        helper.start()
+    }
+    func toggleSendHigherValueInDatalayer() {
+        helper.tealium?.dataLayer.add(key: "application_send_higher_value", value: sendHigherValue, expiry: .forever)
     }
     var body: some Scene {
         WindowGroup {
@@ -53,7 +65,13 @@ struct AppView: App {
                 NavigationView {
                     List {
                         Section {
-                            Text("Selected Strategy: \(strategyListener.selectedStrategy)")
+                            HStack {
+                                Text("Selected Strategy:")
+                                Spacer()
+                                Text(strategyListener.selectedStrategy)
+                                    .bold()
+                            }
+                            
                             Text("Each strategy is a possible implementation you can take into your app. \nChose the one that best suits your needs.\nNote: in this sample the ConversionValue gets automatically reset when changing strategy")
                                 .font(.system(size: 12))
                         }
@@ -67,8 +85,9 @@ struct AppView: App {
                             Toggle("Send Higher Value", isOn: Binding<Bool>.init(get: {
                                 self.sendHigherValue
                             }, set: { newValue in
-                                helper.track(title: "configure_skadnetwork_command", data: ["application_send_higher_value": newValue])
+                                helper.track(title: "configure_skadnetwork_command", data: nil)
                                 self.sendHigherValue = newValue
+                                toggleSendHigherValueInDatalayer()
                             }))
                             Button {
                                 self.strategyListener.resetConversionValue()
@@ -117,7 +136,7 @@ struct SimpleValueStrategyView: View {
             }
         }.navigationTitle("Simple Value Strategy")
             .onAppear {
-                TealiumHelper.shared.tealium?.dataLayer.add(key: "strategy", value: "simple_value", expiry: .untilRestart)
+                TealiumHelper.shared.tealium?.dataLayer.add(key: "strategy", value: "simple_value", expiry: .forever)
             }
     }
 }
@@ -145,7 +164,7 @@ struct MoneyStrategyView: View {
             }
         }.navigationTitle("Money Spent Strategy")
             .onAppear {
-                TealiumHelper.shared.tealium?.dataLayer.add(key: "strategy", value: "money", expiry: .untilRestart)
+                TealiumHelper.shared.tealium?.dataLayer.add(key: "strategy", value: "money", expiry: .forever)
             }
     }
     
@@ -184,7 +203,7 @@ struct JourneyStrategyView: View {
             }
         }.navigationTitle("Journey Steps Strategy")
             .onAppear {
-                TealiumHelper.shared.tealium?.dataLayer.add(key: "strategy", value: "journey", expiry: .untilRestart)
+                TealiumHelper.shared.tealium?.dataLayer.add(key: "strategy", value: "journey", expiry: .forever)
             }
     }
 }
@@ -216,7 +235,7 @@ struct EventStrategyView: View {
             }
         }.navigationTitle("Events Strategy")
             .onAppear {
-                TealiumHelper.shared.tealium?.dataLayer.add(key: "strategy", value: "events", expiry: .untilRestart)
+                TealiumHelper.shared.tealium?.dataLayer.add(key: "strategy", value: "events", expiry: .forever)
             }
     }
 }
@@ -258,7 +277,7 @@ struct MixedEventsStepsStrategyView: View {
             }
         }.navigationTitle("Mixed Events/Steps Strategy")
             .onAppear {
-                TealiumHelper.shared.tealium?.dataLayer.add(key: "strategy", value: "mixed_events_steps", expiry: .untilRestart)
+                TealiumHelper.shared.tealium?.dataLayer.add(key: "strategy", value: "mixed_events_steps", expiry: .forever)
             }
     }
 }
@@ -292,11 +311,11 @@ struct MixedValueStepsStrategyView: View {
                 Text("Next journey step [\(journeyStep+1)]")
             }.disabled(journeyStep >= 7)
             Section {
-                Text("The ConversionValue will be determined by two different strategies. The Value and the Journey Steps.\nYou can specify any number of bits for the value and leave 6-N bit for the journey. \nIn this case we decided to use 3 and 3. So you can put any value like in the Value Strategy, and have steps from 0 to 7 like the Joruney Steps strategy.")
+                Text("The ConversionValue will be determined by two different strategies. The Value and the Journey Steps.\nYou can specify any number of bits for the value and leave 6-N bit for the journey. \nIn this case we decided to use 3 and 3. So you can put any value like (from 0 to 7) in the Value Strategy, and have steps from 0 to 7 like the Joruney Steps strategy.\nNote that Value and Steps strategies are only conceptually different and are actually implemented in the same way.")
             }
         }.navigationTitle("Mixed Value/Steps Strategy")
             .onAppear {
-                TealiumHelper.shared.tealium?.dataLayer.add(key: "strategy", value: "mixed_value_steps", expiry: .untilRestart)
+                TealiumHelper.shared.tealium?.dataLayer.add(key: "strategy", value: "mixed_value_steps", expiry: .forever)
             }
     }
 }
