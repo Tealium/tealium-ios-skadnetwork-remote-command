@@ -19,10 +19,16 @@
         "event3": "setconversionbit",
         "event4": "setconversionbit",
         "event5": "setconversionbit",
+        "reset_event0": "resetconversionbit",
+        "reset_event1": "resetconversionbit",
+        "reset_event2": "resetconversionbit",
+        "reset_event3": "resetconversionbit",
+        "reset_event4": "resetconversionbit",
+        "reset_event5": "resetconversionbit",
         "reset_conversion_value": "resetconversionvalue",
         "configure_skadnetwork_command": "initialize",
         "journey_step": "setconversionvalue",
-        "strategy:mixed_value_steps,tealium_event:value_change":"setconversionvalue"
+        "value_change":"setconversionvalue"
     },
     "statics": {
         "launch": {
@@ -254,6 +260,24 @@
             "application_bit_number": 5,
             "application_coarse_value": "high"
         },
+        "strategy:events,reset_event0": {
+            "application_bit_number": 0,
+        },
+        "strategy:events,reset_event1": {
+            "application_bit_number": 1,
+        },
+        "strategy:events,reset_event2": {
+            "application_bit_number": 2,
+        },
+        "strategy:events,reset_event3": {
+            "application_bit_number": 3,
+        },
+        "strategy:events,reset_event4": {
+            "application_bit_number": 4,
+        },
+        "strategy:events,reset_event5": {
+            "application_bit_number": 5,
+        },
         "strategy:journey,journey_step:1": {
             "application_coarse_value": "low"
         },
@@ -270,6 +294,15 @@
             "application_bit_number": 4,
         },
         "strategy:mixed_events_steps,event2": {
+            "application_bit_number": 5,
+        },
+        "strategy:mixed_events_steps,reset_event0": {
+            "application_bit_number": 3,
+        },
+        "strategy:mixed_events_steps,reset_event1": {
+            "application_bit_number": 4,
+        },
+        "strategy:mixed_events_steps,reset_event2": {
             "application_bit_number": 5,
         },
         "strategy:mixed_events_steps,tealium_event:journey_step": {

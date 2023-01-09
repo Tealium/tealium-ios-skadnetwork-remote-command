@@ -8,15 +8,34 @@
 
 import SwiftUI
 
+class StrategyListener: ObservableObject {
+    @Published var selectedStrategy = "undefined"
+    init() {
+        TealiumHelper.shared.tealium?.dataLayer.onDataUpdated.subscribe({ data in
+            if let strategy = data["strategy"] as? String, strategy != self.selectedStrategy {
+                DispatchQueue.main.async {
+                    self.selectedStrategy = strategy
+                    self.resetConversionValue()
+                }
+            }
+        })
+    }
+    
+    func resetConversionValue() {
+        TealiumHelper.shared.track(title: "reset_conversion_value", data: nil)
+    }
+
+}
+
 @main
 struct AppView: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @ObservedObject var helper = TealiumHelper.shared
     @State var sendHigherValue = false
+    @StateObject var strategyListener = StrategyListener()
     init() {
         TealiumHelper.shared.start()
     }
-
     var body: some Scene {
         WindowGroup {
             VStack(spacing: 0) {
@@ -33,24 +52,30 @@ struct AppView: App {
                 .background(Color.blue.opacity(0.1))
                 NavigationView {
                     List {
-                        
-                        NavigationLink("Money Spent", destination: MoneyStrategyView())
-                        NavigationLink("Jorney Steps", destination: JourneyStrategyView())
-                        NavigationLink("Events Based", destination: EventStrategyView())
-                        NavigationLink("Mixed Events/Steps", destination: MixedEventsStepsStrategyView())
-                        NavigationLink("Mixed Value/Steps", destination: MixedValueStepsStrategyView())
-                        Toggle("Send Higher Value", isOn: Binding<Bool>.init(get: {
-                            self.sendHigherValue
-                        }, set: { newValue in
-                            helper.track(title: "configure_skadnetwork_command", data: ["application_send_higher_value": newValue])
-                            self.sendHigherValue = newValue
-                        }))
-                        Button {
-                            helper.track(title: "reset_conversion_value", data: nil)
-                        } label: {
-                            Text("Reset Conversion Value")
+                        Section {
+                            Text("Selected Strategy: \(strategyListener.selectedStrategy)")
+                            Text("Each strategy is a possible implementation you can take into your app. \nChose the one that best suits your needs.\nNote: in this sample the ConversionValue gets automatically reset when changing strategy")
+                                .font(.system(size: 12))
                         }
-
+                        Section {
+                            NavigationLink("Simple Value Strategy", destination: SimpleValueStrategyView())
+                            NavigationLink("Money Spent", destination: MoneyStrategyView())
+                            NavigationLink("Jorney Steps", destination: JourneyStrategyView())
+                            NavigationLink("Events Based", destination: EventStrategyView())
+                            NavigationLink("Mixed Events/Steps", destination: MixedEventsStepsStrategyView())
+                            NavigationLink("Mixed Value/Steps", destination: MixedValueStepsStrategyView())
+                            Toggle("Send Higher Value", isOn: Binding<Bool>.init(get: {
+                                self.sendHigherValue
+                            }, set: { newValue in
+                                helper.track(title: "configure_skadnetwork_command", data: ["application_send_higher_value": newValue])
+                                self.sendHigherValue = newValue
+                            }))
+                            Button {
+                                self.strategyListener.resetConversionValue()
+                            } label: {
+                                Text("Reset Conversion Value")
+                            }
+                        }
                     }.navigationTitle("Choose Conversion Strategy")
                         .navigationBarTitleDisplayMode(.inline)
                 }
@@ -64,6 +89,37 @@ enum ConversionStrategy {
     case journeyStep
     case events
     case mixed
+}
+
+struct SimpleValueStrategyView: View {
+    @State var value = 0
+    @State var journeyStep = 0
+    var intProxy: Binding<Double>{
+        Binding<Double>(get: {
+            //returns the score as a Double
+            return Double(value)
+        }, set: {
+            value = Int($0)
+        })
+    }
+    var body: some View {
+        List {
+            Text("Value: \(value)")
+            Slider(value: intProxy, in: 0...63, onEditingChanged: { editing in
+                if !editing {
+                    TealiumHelper.shared.track(title: "value_change", data: [
+                        "application_fine_value": value,
+                        "application_coarse_value": (value > 40 ? "high" : value > 20 ? "medium" : "low")])
+                }
+            })
+            Section {
+                Text("The ConversionValue will be determined by the specified value.")
+            }
+        }.navigationTitle("Simple Value Strategy")
+            .onAppear {
+                TealiumHelper.shared.tealium?.dataLayer.add(key: "strategy", value: "simple_value", expiry: .untilRestart)
+            }
+    }
 }
 
 struct MoneyStrategyView: View {
@@ -83,6 +139,10 @@ struct MoneyStrategyView: View {
             spendButton(amount: 8)
             spendButton(amount: 13)
             spendButton(amount: 21)
+            spendButton(amount: 1000)
+            Section {
+                Text("The ConversionValue will increase by 1 for each $10 spent.\nAssuming that the app is tracking in rounded amounts, you can specify values up to $630. \nTo avoid missing higher values, you need to track $630 when the money spent is higher than $630.\nIf you want to change the ranges, for example increase by 1 for each $20 spent, you need to round the tracked value to the next $20 spent. \nFor example a spending of $31 should be rounded to $20 or $40. In this case you would lose sensitivity but gain a wider range, up to $1260.")
+            }
         }.navigationTitle("Money Spent Strategy")
             .onAppear {
                 TealiumHelper.shared.tealium?.dataLayer.add(key: "strategy", value: "money", expiry: .untilRestart)
@@ -100,7 +160,7 @@ struct MoneyStrategyView: View {
     func spend(_ amount: Int) {
         moneySpent += amount
         TealiumHelper.shared.track(title: "spend_money", data: [
-            "money_spent": roundedToTens(moneySpent),
+            "money_spent": min(roundedToTens(moneySpent), 630),
             "spending_type": (moneySpent > 200 ? "premium" : moneySpent > 100 ? "medium" : "low")
         ])
     }
@@ -119,6 +179,9 @@ struct JourneyStrategyView: View {
             } label: {
                 Text("Next journey step [\(journeyStep+1)]")
             }.disabled(journeyStep >= 63)
+            Section {
+                Text("The ConversionValue will increase by 1 for each step taken, up to 63 steps. (This is not much different from the Simple Value Strategy)")
+            }
         }.navigationTitle("Journey Steps Strategy")
             .onAppear {
                 TealiumHelper.shared.tealium?.dataLayer.add(key: "strategy", value: "journey", expiry: .untilRestart)
@@ -132,12 +195,24 @@ struct EventStrategyView: View {
         List {
             Text("Events/Flags: \(events.reversed().description)")
             ForEach(events.indices, id: \.self) { index in
-                Button {
-                    events[index] = 1
-                    TealiumHelper.shared.track(title: "event\(index)", data: [:])
-                } label: {
-                    Text("Set Event/Flag \(index)")
-                }.disabled(events[index] == 1)
+                if events[index] == 1 {
+                    Button {
+                        events[index] = 0
+                        TealiumHelper.shared.track(title: "reset_event\(index)", data: [:])
+                    } label: {
+                        Text("Reset Event/Flag \(index)")
+                    }
+                } else {
+                    Button {
+                        events[index] = 1
+                        TealiumHelper.shared.track(title: "event\(index)", data: [:])
+                    } label: {
+                        Text("Set Event/Flag \(index)")
+                    }
+                }
+            }
+            Section {
+                Text("The ConversionValue will be the decimal number represented by the 6 bits. Everytime an event happens, the related bit rises, and therefore the decimal representation gets updated. This way you can represent up to 6 events.")
             }
         }.navigationTitle("Events Strategy")
             .onAppear {
@@ -153,12 +228,21 @@ struct MixedEventsStepsStrategyView: View {
         List {
             Text("Events/Flags: \(events.reversed().description)")
             ForEach(events.indices, id: \.self) { index in
-                Button {
-                    events[index] = 1
-                    TealiumHelper.shared.track(title: "event\(index)", data: [:])
-                } label: {
-                    Text("Set Event/Flag \(index)")
-                }.disabled(events[index] == 1)
+                if events[index] == 1 {
+                    Button {
+                        events[index] = 0
+                        TealiumHelper.shared.track(title: "reset_event\(index)", data: [:])
+                    } label: {
+                        Text("Reset Event/Flag \(index)")
+                    }
+                } else {
+                    Button {
+                        events[index] = 1
+                        TealiumHelper.shared.track(title: "event\(index)", data: [:])
+                    } label: {
+                        Text("Set Event/Flag \(index)")
+                    }
+                }
             }
             Text("Jorney Step: \(journeyStep)")
             Button {
@@ -169,7 +253,10 @@ struct MixedEventsStepsStrategyView: View {
             } label: {
                 Text("Next journey step [\(journeyStep+1)]")
             }.disabled(journeyStep >= 7)
-        }.navigationTitle("Events Strategy")
+            Section {
+                Text("The ConversionValue will be determined by two different strategies. The Events and the Journey Steps.\nYou can specify any number of bits for the event and leave 6-N bit for the journey. \nIn this case we decided to use 3 and 3. So you can raise bits 3-4-5 like the Events Strategy, and have steps from 0 to 7 like the Joruney Steps strategy.")
+            }
+        }.navigationTitle("Mixed Events/Steps Strategy")
             .onAppear {
                 TealiumHelper.shared.tealium?.dataLayer.add(key: "strategy", value: "mixed_events_steps", expiry: .untilRestart)
             }
@@ -204,7 +291,10 @@ struct MixedValueStepsStrategyView: View {
             } label: {
                 Text("Next journey step [\(journeyStep+1)]")
             }.disabled(journeyStep >= 7)
-        }.navigationTitle("Events Strategy")
+            Section {
+                Text("The ConversionValue will be determined by two different strategies. The Value and the Journey Steps.\nYou can specify any number of bits for the value and leave 6-N bit for the journey. \nIn this case we decided to use 3 and 3. So you can put any value like in the Value Strategy, and have steps from 0 to 7 like the Joruney Steps strategy.")
+            }
+        }.navigationTitle("Mixed Value/Steps Strategy")
             .onAppear {
                 TealiumHelper.shared.tealium?.dataLayer.add(key: "strategy", value: "mixed_value_steps", expiry: .untilRestart)
             }
