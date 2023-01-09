@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		1520113F296C2665005E8D89 /* ValueBitLimiterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1520113E296C2665005E8D89 /* ValueBitLimiterTests.swift */; };
+		15201141296C6C57005E8D89 /* StrategyListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15201140296C6C57005E8D89 /* StrategyListener.swift */; };
+		15201143296C6CA3005E8D89 /* SimpleValueStrategyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15201142296C6CA3005E8D89 /* SimpleValueStrategyView.swift */; };
+		15201145296C6CF4005E8D89 /* MoneyStrategyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15201144296C6CF4005E8D89 /* MoneyStrategyView.swift */; };
+		15201147296C6D13005E8D89 /* JourneyStrategyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15201146296C6D13005E8D89 /* JourneyStrategyView.swift */; };
+		15201149296C6D36005E8D89 /* EventStrategyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15201148296C6D36005E8D89 /* EventStrategyView.swift */; };
+		1520114B296C6D53005E8D89 /* MixedEventsStepsStrategyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1520114A296C6D53005E8D89 /* MixedEventsStepsStrategyView.swift */; };
+		1520114D296C6D72005E8D89 /* MixedValueStepsStrategyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1520114C296C6D72005E8D89 /* MixedValueStepsStrategyView.swift */; };
 		1535CFA929644E5700605ED3 /* SKAdNetworkInstanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1535CFA129644E4700605ED3 /* SKAdNetworkInstanceTests.swift */; };
 		1535CFAA29644E5700605ED3 /* SKAdNetworkRemoteCommandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1535CFA229644E4700605ED3 /* SKAdNetworkRemoteCommandTests.swift */; };
 		1535CFAB29644E5700605ED3 /* MockSKAdNetworkCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1535CFA329644E4700605ED3 /* MockSKAdNetworkCommand.swift */; };
@@ -32,6 +39,13 @@
 
 /* Begin PBXFileReference section */
 		1520113E296C2665005E8D89 /* ValueBitLimiterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueBitLimiterTests.swift; sourceTree = "<group>"; };
+		15201140296C6C57005E8D89 /* StrategyListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrategyListener.swift; sourceTree = "<group>"; };
+		15201142296C6CA3005E8D89 /* SimpleValueStrategyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleValueStrategyView.swift; sourceTree = "<group>"; };
+		15201144296C6CF4005E8D89 /* MoneyStrategyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyStrategyView.swift; sourceTree = "<group>"; };
+		15201146296C6D13005E8D89 /* JourneyStrategyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyStrategyView.swift; sourceTree = "<group>"; };
+		15201148296C6D36005E8D89 /* EventStrategyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventStrategyView.swift; sourceTree = "<group>"; };
+		1520114A296C6D53005E8D89 /* MixedEventsStepsStrategyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixedEventsStepsStrategyView.swift; sourceTree = "<group>"; };
+		1520114C296C6D72005E8D89 /* MixedValueStepsStrategyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixedValueStepsStrategyView.swift; sourceTree = "<group>"; };
 		1535CFA129644E4700605ED3 /* SKAdNetworkInstanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKAdNetworkInstanceTests.swift; sourceTree = "<group>"; };
 		1535CFA229644E4700605ED3 /* SKAdNetworkRemoteCommandTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKAdNetworkRemoteCommandTests.swift; sourceTree = "<group>"; };
 		1535CFA329644E4700605ED3 /* MockSKAdNetworkCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockSKAdNetworkCommand.swift; sourceTree = "<group>"; };
@@ -116,6 +130,13 @@
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 				15D3B3B22965D5690078A1B3 /* AppView.swift */,
 				15D3B3B42965D64B0078A1B3 /* TealiumHelper.swift */,
+				15201140296C6C57005E8D89 /* StrategyListener.swift */,
+				15201142296C6CA3005E8D89 /* SimpleValueStrategyView.swift */,
+				15201144296C6CF4005E8D89 /* MoneyStrategyView.swift */,
+				15201146296C6D13005E8D89 /* JourneyStrategyView.swift */,
+				15201148296C6D36005E8D89 /* EventStrategyView.swift */,
+				1520114A296C6D53005E8D89 /* MixedEventsStepsStrategyView.swift */,
+				1520114C296C6D72005E8D89 /* MixedValueStepsStrategyView.swift */,
 			);
 			name = "Example for TealiumSKAdNetwork";
 			path = TealiumSKAdNetwork;
@@ -332,8 +353,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15201145296C6CF4005E8D89 /* MoneyStrategyView.swift in Sources */,
+				1520114D296C6D72005E8D89 /* MixedValueStepsStrategyView.swift in Sources */,
+				1520114B296C6D53005E8D89 /* MixedEventsStepsStrategyView.swift in Sources */,
 				15D3B3B32965D5690078A1B3 /* AppView.swift in Sources */,
+				15201149296C6D36005E8D89 /* EventStrategyView.swift in Sources */,
 				15D3B3B52965D64B0078A1B3 /* TealiumHelper.swift in Sources */,
+				15201143296C6CA3005E8D89 /* SimpleValueStrategyView.swift in Sources */,
+				15201141296C6C57005E8D89 /* StrategyListener.swift in Sources */,
+				15201147296C6D13005E8D89 /* JourneyStrategyView.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
