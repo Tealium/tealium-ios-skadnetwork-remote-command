@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1520114F296C709C005E8D89 /* ValueBitLimiterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1520114E296C709C005E8D89 /* ValueBitLimiterTests.swift */; };
+		15201151296C70B5005E8D89 /* ValueBitLimiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15201150296C70B5005E8D89 /* ValueBitLimiter.swift */; };
 		1535CF68296447EC00605ED3 /* TealiumSKAdNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1535CF5F296447EB00605ED3 /* TealiumSKAdNetwork.framework */; };
 		1535CF832964494F00605ED3 /* TealiumSKAdNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 1535CF7F2964494E00605ED3 /* TealiumSKAdNetwork.h */; };
 		1535CF842964494F00605ED3 /* SKAdNetworkRemoteCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1535CF802964494E00605ED3 /* SKAdNetworkRemoteCommand.swift */; };
@@ -31,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1520114E296C709C005E8D89 /* ValueBitLimiterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ValueBitLimiterTests.swift; path = Tests/ValueBitLimiterTests.swift; sourceTree = "<group>"; };
+		15201150296C70B5005E8D89 /* ValueBitLimiter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ValueBitLimiter.swift; path = Sources/ValueBitLimiter.swift; sourceTree = "<group>"; };
 		1535CF5F296447EB00605ED3 /* TealiumSKAdNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TealiumSKAdNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1535CF67296447EC00605ED3 /* TealiumSKAdNetworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TealiumSKAdNetworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1535CF7F2964494E00605ED3 /* TealiumSKAdNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TealiumSKAdNetwork.h; path = Sources/TealiumSKAdNetwork.h; sourceTree = "<group>"; };
@@ -93,6 +97,7 @@
 				1535CF802964494E00605ED3 /* SKAdNetworkRemoteCommand.swift */,
 				1535CF9829644A8200605ED3 /* SKAdNetworkInstance.swift */,
 				1535CF822964494F00605ED3 /* UserDefaults+ConversionData.swift */,
+				15201150296C70B5005E8D89 /* ValueBitLimiter.swift */,
 				1535CF7F2964494E00605ED3 /* TealiumSKAdNetwork.h */,
 			);
 			name = TealiumSKAdNetwork;
@@ -105,6 +110,7 @@
 				1535CFAE29644FAB00605ED3 /* MockSKAdNetworkCommand.swift */,
 				1535CFAC29644FAB00605ED3 /* SKAdNetworkInstanceTests.swift */,
 				1535CFAD29644FAB00605ED3 /* SKAdNetworkRemoteCommandTests.swift */,
+				1520114E296C709C005E8D89 /* ValueBitLimiterTests.swift */,
 			);
 			name = TealiumSKAdNetworkTests;
 			sourceTree = "<group>";
@@ -229,6 +235,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15201151296C70B5005E8D89 /* ValueBitLimiter.swift in Sources */,
 				1535CF862964494F00605ED3 /* UserDefaults+ConversionData.swift in Sources */,
 				1535CF842964494F00605ED3 /* SKAdNetworkRemoteCommand.swift in Sources */,
 				1535CF9929644A8200605ED3 /* SKAdNetworkInstance.swift in Sources */,
@@ -242,6 +249,7 @@
 			files = (
 				1535CFB129644FAB00605ED3 /* MockSKAdNetworkCommand.swift in Sources */,
 				1535CFAF29644FAB00605ED3 /* SKAdNetworkInstanceTests.swift in Sources */,
+				1520114F296C709C005E8D89 /* ValueBitLimiterTests.swift in Sources */,
 				1535CFB029644FAB00605ED3 /* SKAdNetworkRemoteCommandTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
