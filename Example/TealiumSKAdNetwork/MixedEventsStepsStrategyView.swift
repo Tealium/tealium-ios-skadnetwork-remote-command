@@ -31,7 +31,7 @@ struct MixedEventsStepsStrategyView: View {
                     }
                 }
             }
-            Text("Jorney Step: \(journeyStep)")
+            Text("Journey Step: \(journeyStep)")
             Button {
                 if journeyStep < 7 {
                     journeyStep += 1

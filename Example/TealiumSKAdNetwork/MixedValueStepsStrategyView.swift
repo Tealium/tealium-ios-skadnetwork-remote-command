@@ -32,7 +32,7 @@ struct MixedValueStepsStrategyView: View {
                     TealiumHelper.shared.track(title: "value_change", data: ["application_fine_value": value])
                 }
             })
-            Text("Jorney Step: \(journeyStep)")
+            Text("Journey Step: \(journeyStep)")
             Button {
                 if journeyStep < 7 {
                     journeyStep += 1

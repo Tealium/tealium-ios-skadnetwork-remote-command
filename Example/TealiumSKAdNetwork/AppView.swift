@@ -50,7 +50,7 @@ struct AppView: App {
                         Section {
                             NavigationLink("Simple Value Strategy", destination: SimpleValueStrategyView())
                             NavigationLink("Money Spent", destination: MoneyStrategyView())
-                            NavigationLink("Jorney Steps", destination: JourneyStrategyView())
+                            NavigationLink("Journey Steps", destination: JourneyStrategyView())
                             NavigationLink("Events Based", destination: EventStrategyView())
                             NavigationLink("Mixed Events/Steps", destination: MixedEventsStepsStrategyView())
                             NavigationLink("Mixed Value/Steps", destination: MixedValueStepsStrategyView())

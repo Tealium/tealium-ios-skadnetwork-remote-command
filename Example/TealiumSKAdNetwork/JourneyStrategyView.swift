@@ -12,7 +12,7 @@ struct JourneyStrategyView: View {
     @State var journeyStep = 0
     var body: some View {
         List {
-            Text("Jorney Step: \(journeyStep)")
+            Text("Journey Step: \(journeyStep)")
             Button {
                 if journeyStep < 63 {
                     journeyStep += 1
