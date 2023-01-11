@@ -37,38 +37,60 @@ struct AppView: App {
                 NavigationView {
                     List {
                         Section {
-                            HStack {
-                                Text("Selected Strategy:")
-                                Spacer()
-                                Text(strategyListener.selectedStrategy)
-                                    .bold()
+                            VStack(alignment: .leading, spacing: 10) {
+                                HStack {
+                                    Text("Selected Strategy:")
+                                    Spacer()
+                                    Text(strategyListener.selectedStrategy)
+                                        .bold()
+                                }
+                                Text("Each strategy is a possible implementation you can take into your app. \nChose the one that best suits your needs.\nNote: in this sample the ConversionValue gets automatically reset when changing strategy.")
+                                    .font(.system(size: 12))
                             }
-                            
-                            Text("Each strategy is a possible implementation you can take into your app. \nChose the one that best suits your needs.\nNote: in this sample the ConversionValue gets automatically reset when changing strategy")
-                                .font(.system(size: 12))
                         }
                         Section {
-                            NavigationLink("Simple Value Strategy", destination: SimpleValueStrategyView())
+                            NavigationLink("Simple Value", destination: SimpleValueStrategyView())
                             NavigationLink("Money Spent", destination: MoneyStrategyView())
                             NavigationLink("Journey Steps", destination: JourneyStrategyView())
                             NavigationLink("Events Based", destination: EventStrategyView())
                             NavigationLink("Mixed Events/Steps", destination: MixedEventsStepsStrategyView())
                             NavigationLink("Mixed Value/Steps", destination: MixedValueStepsStrategyView())
-                            Toggle("Send Higher Value", isOn: Binding<Bool>.init(get: {
-                                self.sendHigherValue
-                            }, set: { newValue in
-                                helper.track(title: "configure_skadnetwork_command", data: nil)
-                                self.sendHigherValue = newValue
-                                toggleSendHigherValueInDatalayer()
-                            }))
-                            Button {
-                                self.strategyListener.resetConversionValue()
-                            } label: {
-                                Text("Reset Conversion Value")
-                            }
+                        } header: {
+                            Text("Choose Conversion Strategy")
                         }
-                    }.navigationTitle("Choose Conversion Strategy")
-                        .navigationBarTitleDisplayMode(.inline)
+                        Section {
+                            VStack(alignment: .leading) {
+                                Toggle("Send Higher Value", isOn: Binding<Bool>.init(get: {
+                                    self.sendHigherValue
+                                }, set: { newValue in
+                                    helper.track(title: "configure_skadnetwork_command", data: nil)
+                                    self.sendHigherValue = newValue
+                                    toggleSendHigherValueInDatalayer()
+                                }))
+                                Text("""
+When set to true, it only sends Higher Values, ignoring Fine and Coarse values lower than the current values.
+""")
+                                    .font(.system(size: 12))
+                            }
+                            VStack(alignment: .leading, spacing: 10) {
+                                Button {
+                                    self.strategyListener.resetConversionValue()
+                                } label: {
+                                    HStack {
+                                        Text("Reset Conversion Value")
+                                            .bold()
+                                        Spacer()
+                                        Image(systemName: "trash")
+                                    }
+                                }
+                                Text("Resets the conversion values and ignores the sendHigherValue flag.")
+                                    .font(.system(size: 12))
+                            }
+                        } header: {
+                            Text("Options")
+                        }
+
+                    }
                 }
             }
         }

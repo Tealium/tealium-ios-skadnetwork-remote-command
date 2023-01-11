@@ -41,7 +41,7 @@ struct MixedEventsStepsStrategyView: View {
                 Text("Next journey step [\(journeyStep+1)]")
             }.disabled(journeyStep >= 7)
             Section {
-                Text("The ConversionValue will be determined by two different strategies. The Events and the Journey Steps.\nYou can specify any number of bits for the event and leave 6-N bit for the journey. \nIn this case we decided to use 3 and 3. So you can raise bits 3-4-5 like the Events Strategy, and have steps from 0 to 7 like the Joruney Steps strategy.")
+                Text("The ConversionValue will be determined by two different strategies. The Events and the Journey Steps.\nYou can specify any number of bits for the event and leave 6-N bit for the journey. \nIn this case we decided to use 3 and 3. So you can raise bits 3-4-5 like the Events Strategy, and have steps from 0 to 7 like the Journey Steps strategy.")
             }
         }.navigationTitle("Mixed Events/Steps Strategy")
             .onAppear {

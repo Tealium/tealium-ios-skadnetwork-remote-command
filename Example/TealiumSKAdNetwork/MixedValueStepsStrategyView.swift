@@ -42,7 +42,7 @@ struct MixedValueStepsStrategyView: View {
                 Text("Next journey step [\(journeyStep+1)]")
             }.disabled(journeyStep >= 7)
             Section {
-                Text("The ConversionValue will be determined by two different strategies. The Value and the Journey Steps.\nYou can specify any number of bits for the value and leave 6-N bit for the journey. \nIn this case we decided to use 3 and 3. So you can put any value like (from 0 to 7) in the Value Strategy, and have steps from 0 to 7 like the Joruney Steps strategy.\nNote that Value and Steps strategies are only conceptually different and are actually implemented in the same way.")
+                Text("The ConversionValue will be determined by two different strategies. The Value and the Journey Steps.\nYou can specify any number of bits for the value and leave 6-N bit for the journey. \nIn this case we decided to use 3 and 3. So you can put any value (from 0 to 7) like in the Value Strategy, and have steps from 0 to 7 like the Journey Steps strategy.\nNote that Value and Steps strategies are only conceptually different and are actually implemented similarly.")
             }
         }.navigationTitle("Mixed Value/Steps Strategy")
             .onAppear {
