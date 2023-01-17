@@ -14,9 +14,6 @@ struct AppView: App {
     @ObservedObject var helper = TealiumHelper.shared
     @AppStorage("sendHigherValue") var sendHigherValue = false
     @StateObject var strategyListener = StrategyListener()
-    init() {
-        helper.start()
-    }
     func toggleSendHigherValueInDatalayer() {
         helper.tealium?.dataLayer.add(key: "application_send_higher_value", value: sendHigherValue, expiry: .forever)
     }
