@@ -22,15 +22,15 @@ Pod::Spec.new do |s|
                        DESC
 
   s.homepage         = 'https://github.com/Tealium/tealium-ios-skadnetwork-remote-command'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
+  s.license          = { :type => "Commercial", :file => "LICENSE" }
   s.author           = { "Tealium Inc." => "tealium@tealium.com" }
-  s.source           = { :git => 'https://github.com/Tealium/tealium-ios-skadnetwork-remote-command.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/Tealium/tealium-ios-skadnetwork-remote-command.git', :tag => "#{s.version}" }
   s.social_media_url   = "https://twitter.com/tealium"
   s.swift_version = "5.0"
   s.ios.deployment_target = '11.0'
 
   s.source_files = 'Sources/*.{swift}'
   
-  s.ios.dependency 'tealium-swift/Core', '~> 2.8'
-  s.ios.dependency 'tealium-swift/RemoteCommands', '~> 2.8'
+  s.ios.dependency 'tealium-swift/Core', '~> 2.9'
+  s.ios.dependency 'tealium-swift/RemoteCommands', '~> 2.9'
 end

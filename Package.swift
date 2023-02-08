@@ -10,7 +10,7 @@ let package = Package(
         .library(name: "TealiumSKAdNetwork", targets: ["TealiumSKAdNetwork"])
     ],
     dependencies: [
-        .package(name: "TealiumSwift", url: "https://github.com/tealium/tealium-swift", .upToNextMajor(from: "2.8.0"))
+        .package(name: "TealiumSwift", url: "https://github.com/tealium/tealium-swift", .upToNextMajor(from: "2.9.0"))
     ],
     targets: [
         .target(

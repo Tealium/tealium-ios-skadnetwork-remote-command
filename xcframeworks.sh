@@ -13,7 +13,7 @@ MACOS_SDKROOT="SDKROOT = macosx;"
 IOS_SDKROOT="SDKROOT = \"iphoneos\";"
 LATEST_MAJOR="2."
 PREVIOUS_MAJOR="1."
-IOS_ONLY_PRODUCTS="TealiumAttributionTealiumAutotrackingTealiumLocationTealiumCrashTealiumRemoteCommandsTealiumTagManagementTealiumSKAdNetwork"
+IOS_ONLY_PRODUCTS="TealiumSKAdNetwork"
 declare -a PRODUCT_NAME
 # destinations
 IOS_SIM_DESTINATION="generic/platform=iOS Simulator"
@@ -23,7 +23,6 @@ TVOS_DESTINATION="generic/platform=tvOS"
 WATCHOS_SIM_DESTINATION="generic/platform=watchOS Simulator"
 WATCHOS_DESTINATION="generic/platform=watchOS"
 MACOS_DESTINATION="generic/platform=macOS"
-CATALYST_DESTINATION="platform=macOS,variant=Mac Catalyst"
 # xcarchives
 IOS_SIM_ARCHIVE="ios-sim.xcarchive"
 IOS_ARCHIVE="ios.xcarchive"
@@ -32,7 +31,6 @@ TVOS_ARCHIVE="tvos.xcarchive"
 WATCHOS_SIM_ARCHIVE="watchos-sim.xcarchive"
 WATCHOS_ARCHIVE="watchos.xcarchive"
 MACOS_ARCHIVE="macos.xcarchive"
-CATALYST_ARCHIVE="ios-catalyst.xcarchive"
 
 # function declarations
 function define_product_name {
@@ -41,7 +39,7 @@ function define_product_name {
             PRODUCT_NAME=(TealiumSKAdNetwork)
             ;;
         *"$PREVIOUS_MAJOR"*)
-            PRODUCT_NAME=(TealiumCore TealiumAppData TealiumAttribution TealiumAutotracking TealiumCollect TealiumConsentManager TealiumCrash TealiumDelegate TealiumDeviceData TealiumDispatchQueue TealiumLifecycle TealiumLocation TealiumLogger TealiumPersistentData TealiumRemoteCommands TealiumTagManagement TealiumVisitorService TealiumVolatileData)
+            PRODUCT_NAME=(TealiumSKAdNetwork)
             ;;
         *)
             echo "ERROR, VERSION NUMBER INVALID"
@@ -84,7 +82,6 @@ function archive {
     -sdk "${4}" \
     SKIP_INSTALL=NO \
     BUILD_LIBRARY_FOR_DISTRIBUTION=YES \
-    SUPPORTS_MACCATALYST=NO \
     BUILD_SCRIPT=YES
     echo "Archiving ${1} ${2} ${3} ${4}"   
 }
@@ -123,7 +120,6 @@ function create_xcframework {
 function create_archives_ios_only {
     archive "$1" "${IOS_SIM_DESTINATION}" "${BUILD_PATH}/${IOS_SIM_ARCHIVE}" "iphonesimulator"
     archive "$1" "${IOS_DESTINATION}" "${BUILD_PATH}/${IOS_ARCHIVE}" "iphoneos";
-    archive "$1" "${CATALYST_DESTINATION}" "${BUILD_PATH}/${CATALYST_ARCHIVE}" "iphoneos";
     create_xcframework "$1"
 }
 
@@ -173,7 +169,6 @@ clean_build_folder
 create_archives "$1"
 zip_xcframeworks
 
-mv "${ZIP_PATH}" "../"
 
 echo ""
 echo "Done! Upload ${ZIP_PATH} to GitHub when you create the release."
