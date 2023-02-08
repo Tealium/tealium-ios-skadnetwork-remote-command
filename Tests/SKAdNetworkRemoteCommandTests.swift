@@ -78,6 +78,48 @@ final class SKAdNetworkRemoteCommandTests: XCTestCase {
         XCTAssertEqual(mockInstance.postbackConversionValueCalls, 3)
     }
     
+    func testSetConversionValueLimited() {
+        let payload: [String: Any] = [
+            "command_name": "setconversionvalue",
+            "fine_value": 2,
+            "coarse_value": "medium",
+            "limit_to_highest_n_bits": 3
+        ]
+        command.handleCompletion(payload: payload)
+        XCTAssertEqual(mockInstance.conversionData.fineValue, 16)
+        XCTAssertEqual(mockInstance.conversionData.coarseValue, .medium)
+        mockInstance.resetConversionData()
+        let payload2: [String: Any] = [
+            "command_name": "setconversionvalue",
+            "fine_value": 2,
+            "coarse_value": "high",
+            "limit_to_highest_n_bits": 2
+        ]
+        command.handleCompletion(payload: payload2)
+        XCTAssertEqual(mockInstance.conversionData.fineValue, 32)
+        XCTAssertEqual(mockInstance.conversionData.coarseValue, .high)
+        mockInstance.resetConversionData()
+        let payload3: [String: Any] = [
+            "command_name": "setconversionvalue",
+            "fine_value": 9,
+            "coarse_value": "medium",
+            "limit_to_lowest_n_bits": 3
+        ]
+        command.handleCompletion(payload: payload3)
+        XCTAssertEqual(mockInstance.conversionData.fineValue, 1)
+        XCTAssertEqual(mockInstance.conversionData.coarseValue, .medium)
+        mockInstance.resetConversionData()
+        let payload4: [String: Any] = [
+            "command_name": "setconversionvalue",
+            "fine_value": 3,
+            "coarse_value": "high",
+            "limit_to_lowest_n_bits": 2
+        ]
+        command.handleCompletion(payload: payload4)
+        XCTAssertEqual(mockInstance.conversionData.fineValue, 3)
+        XCTAssertEqual(mockInstance.conversionData.coarseValue, .high)
+    }
+    
     func testLockWindow() {
         let payload: [String: Any] = [
             "command_name": "setconversionvalue",
@@ -98,35 +140,6 @@ final class SKAdNetworkRemoteCommandTests: XCTestCase {
         XCTAssertEqual(mockInstance.registerForAttributionCalls, 1)
         XCTAssertEqual(mockInstance.postbackConversionValueCalls, 1)
     }
-    
-//    func handleCommand(_ commandId: String, payload: [String: Any]) {
-//        switch commandId {
-//        case SKADNetworkConstants.Commands.initialize:
-//            instance.initialize(configuration: getConfiguration(payload: payload))
-//        case SKADNetworkConstants.Commands.setConversionBit:
-//            guard let bitNumber = getBitNumber(payload: payload) else { return }
-//            updateConversionData(fineValue: instance.conversionData.fineValue | (1 << bitNumber),
-//                                 payload: payload)
-//        case SKADNetworkConstants.Commands.resetConversionBit:
-//            guard let bitNumber = getBitNumber(payload: payload) else { return }
-//            updateConversionData(fineValue: instance.conversionData.fineValue & ~(1 << bitNumber),
-//                                 payload: payload)
-//        case SKADNetworkConstants.Commands.setConversionValue:
-//            guard let fineValue = payload[SKADNetworkConstants.EventKeys.fineValue] as? Int else {
-//                return
-//            }
-//            updateConversionData(fineValue: fineValue,
-//                                 payload: payload)
-//        case SKADNetworkConstants.Commands.resetConversionValue:
-//            instance.resetConversionData()
-//        case SKADNetworkConstants.Commands.registerAppForAttribution:
-//            if #unavailable(iOS 14.0) {
-//                instance.registerAppForAttribution()
-//            }
-//        default:
-//            break
-//        }
-//    }
     
     func testGetBitNumber() {
         let payload1: [String: Any] = ["bit_number": 0]
@@ -158,5 +171,32 @@ final class SKAdNetworkRemoteCommandTests: XCTestCase {
         XCTAssertEqual(command.getCoarseValue(payload: payload2), .medium)
         let payload3: [String: Any] = ["coarse_value": "high"]
         XCTAssertEqual(command.getCoarseValue(payload: payload3), .high)
+    }
+    
+    func testGetLowestSideLimit() {
+        let payload1: [String: Any] = ["limit_to_lowest_n_bits": 2]
+        XCTAssertEqual(command.getSideLimit(payload: payload1), .right(2))
+        let payload2: [String: Any] = ["limit_to_lowest_n_bits": 4]
+        XCTAssertEqual(command.getSideLimit(payload: payload2), .right(4))
+    }
+    
+    func testGetHighestSideLimit() {
+        let payload1: [String: Any] = ["limit_to_highest_n_bits": 2]
+        XCTAssertEqual(command.getSideLimit(payload: payload1), .left(2))
+        let payload2: [String: Any] = ["limit_to_highest_n_bits": 4]
+        XCTAssertEqual(command.getSideLimit(payload: payload2), .left(4))
+    }
+}
+
+extension ValueBitLimiter.SideLimit: Equatable {
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        switch (lhs,rhs) {
+        case (.left(let leftValue), .left(let rightValue)):
+            return leftValue == rightValue
+        case (.right(let leftValue), .right(let rightValue)):
+            return leftValue == rightValue
+        default:
+            return false
+        }
     }
 }

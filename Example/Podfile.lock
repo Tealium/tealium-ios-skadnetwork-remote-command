@@ -1,5 +1,9 @@
 PODS:
+  - tealium-swift/Collect (2.9.1):
+    - tealium-swift/Core
   - tealium-swift/Core (2.9.1)
+  - tealium-swift/Lifecycle (2.9.1):
+    - tealium-swift/Core
   - tealium-swift/RemoteCommands (2.9.1):
     - tealium-swift/Core
   - TealiumSKAdNetwork (1.0.0):
@@ -7,6 +11,8 @@ PODS:
     - tealium-swift/RemoteCommands (~> 2.9)
 
 DEPENDENCIES:
+  - tealium-swift/Collect
+  - tealium-swift/Lifecycle
   - TealiumSKAdNetwork (from `../`)
 
 SPEC REPOS:
@@ -19,8 +25,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   tealium-swift: 137769254e97d4c9f7ed6e16e0768b40888e6452
-  TealiumSKAdNetwork: 1c7e6050f5e52d0cf49812ade25694cbfc66e3c6
+  TealiumSKAdNetwork: 5f3e6e097acb233ade14a99dbe7f9998a5a73664
 
-PODFILE CHECKSUM: 7801e138ecda9556e106fea46c4acda2843d641f
+PODFILE CHECKSUM: db0c13e1084e5a7b275508c06cd553bd966e2279
 
 COCOAPODS: 1.11.3
