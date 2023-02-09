@@ -1,0 +1,600 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1520113F296C2665005E8D89 /* ValueBitLimiterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1520113E296C2665005E8D89 /* ValueBitLimiterTests.swift */; };
+		15201141296C6C57005E8D89 /* StrategyListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15201140296C6C57005E8D89 /* StrategyListener.swift */; };
+		15201143296C6CA3005E8D89 /* SimpleValueStrategyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15201142296C6CA3005E8D89 /* SimpleValueStrategyView.swift */; };
+		15201145296C6CF4005E8D89 /* MoneyStrategyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15201144296C6CF4005E8D89 /* MoneyStrategyView.swift */; };
+		15201147296C6D13005E8D89 /* JourneyStrategyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15201146296C6D13005E8D89 /* JourneyStrategyView.swift */; };
+		15201149296C6D36005E8D89 /* EventStrategyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15201148296C6D36005E8D89 /* EventStrategyView.swift */; };
+		1520114B296C6D53005E8D89 /* MixedEventsStepsStrategyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1520114A296C6D53005E8D89 /* MixedEventsStepsStrategyView.swift */; };
+		1520114D296C6D72005E8D89 /* MixedValueStepsStrategyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1520114C296C6D72005E8D89 /* MixedValueStepsStrategyView.swift */; };
+		1535CFA929644E5700605ED3 /* SKAdNetworkInstanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1535CFA129644E4700605ED3 /* SKAdNetworkInstanceTests.swift */; };
+		1535CFAA29644E5700605ED3 /* SKAdNetworkRemoteCommandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1535CFA229644E4700605ED3 /* SKAdNetworkRemoteCommandTests.swift */; };
+		1535CFAB29644E5700605ED3 /* MockSKAdNetworkCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1535CFA329644E4700605ED3 /* MockSKAdNetworkCommand.swift */; };
+		15D3B3B32965D5690078A1B3 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D3B3B22965D5690078A1B3 /* AppView.swift */; };
+		15D3B3B52965D64B0078A1B3 /* TealiumHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D3B3B42965D64B0078A1B3 /* TealiumHelper.swift */; };
+		15D3B3B72965D7AF0078A1B3 /* skadnetworkcommand.json in Resources */ = {isa = PBXBuildFile; fileRef = 15D3B3B62965D7AF0078A1B3 /* skadnetworkcommand.json */; };
+		4572A1E916DDB643E7D2F392 /* Pods_TealiumSKAdNetwork_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D66820781D18716ACA46210 /* Pods_TealiumSKAdNetwork_Example.framework */; };
+		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
+		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
+		D13E16F39026AEBD6A8861D4 /* Pods_TealiumSKAdNetwork_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA31BC5B9B9E808844FE66D /* Pods_TealiumSKAdNetwork_Tests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		607FACE61AFB9204008FA782 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 607FACCF1AFB9204008FA782;
+			remoteInfo = TealiumSKAdNetwork;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1520113E296C2665005E8D89 /* ValueBitLimiterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueBitLimiterTests.swift; sourceTree = "<group>"; };
+		15201140296C6C57005E8D89 /* StrategyListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrategyListener.swift; sourceTree = "<group>"; };
+		15201142296C6CA3005E8D89 /* SimpleValueStrategyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleValueStrategyView.swift; sourceTree = "<group>"; };
+		15201144296C6CF4005E8D89 /* MoneyStrategyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyStrategyView.swift; sourceTree = "<group>"; };
+		15201146296C6D13005E8D89 /* JourneyStrategyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyStrategyView.swift; sourceTree = "<group>"; };
+		15201148296C6D36005E8D89 /* EventStrategyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventStrategyView.swift; sourceTree = "<group>"; };
+		1520114A296C6D53005E8D89 /* MixedEventsStepsStrategyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixedEventsStepsStrategyView.swift; sourceTree = "<group>"; };
+		1520114C296C6D72005E8D89 /* MixedValueStepsStrategyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixedValueStepsStrategyView.swift; sourceTree = "<group>"; };
+		1535CFA129644E4700605ED3 /* SKAdNetworkInstanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKAdNetworkInstanceTests.swift; sourceTree = "<group>"; };
+		1535CFA229644E4700605ED3 /* SKAdNetworkRemoteCommandTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKAdNetworkRemoteCommandTests.swift; sourceTree = "<group>"; };
+		1535CFA329644E4700605ED3 /* MockSKAdNetworkCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockSKAdNetworkCommand.swift; sourceTree = "<group>"; };
+		15D3B3B22965D5690078A1B3 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		15D3B3B42965D64B0078A1B3 /* TealiumHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TealiumHelper.swift; sourceTree = "<group>"; };
+		15D3B3B62965D7AF0078A1B3 /* skadnetworkcommand.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = skadnetworkcommand.json; sourceTree = "<group>"; };
+		385260D3CC445A799A0A26E6 /* Pods-TealiumSKAdNetwork_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TealiumSKAdNetwork_Tests.release.xcconfig"; path = "Target Support Files/Pods-TealiumSKAdNetwork_Tests/Pods-TealiumSKAdNetwork_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		55DDF07E15E0B09FBE9C0C53 /* Pods-TealiumSKAdNetwork_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TealiumSKAdNetwork_Example.debug.xcconfig"; path = "Target Support Files/Pods-TealiumSKAdNetwork_Example/Pods-TealiumSKAdNetwork_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		57B926D346CE92501CDBEA81 /* Pods-TealiumSKAdNetwork_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TealiumSKAdNetwork_Example.release.xcconfig"; path = "Target Support Files/Pods-TealiumSKAdNetwork_Example/Pods-TealiumSKAdNetwork_Example.release.xcconfig"; sourceTree = "<group>"; };
+		5983D465C40791993758565F /* TealiumSKAdNetwork.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = TealiumSKAdNetwork.podspec; path = ../TealiumSKAdNetwork.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		607FACD01AFB9204008FA782 /* TealiumSKAdNetwork_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TealiumSKAdNetwork_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		607FACE51AFB9204008FA782 /* TealiumSKAdNetwork_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TealiumSKAdNetwork_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D66820781D18716ACA46210 /* Pods_TealiumSKAdNetwork_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TealiumSKAdNetwork_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4093A49C598824990B2A561 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		CBCD4C7881E06C92AF3A68A4 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		CC33D2D817027E7B04FEE794 /* Pods-TealiumSKAdNetwork_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TealiumSKAdNetwork_Tests.debug.xcconfig"; path = "Target Support Files/Pods-TealiumSKAdNetwork_Tests/Pods-TealiumSKAdNetwork_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		FFA31BC5B9B9E808844FE66D /* Pods_TealiumSKAdNetwork_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TealiumSKAdNetwork_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		607FACCD1AFB9204008FA782 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4572A1E916DDB643E7D2F392 /* Pods_TealiumSKAdNetwork_Example.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		607FACE21AFB9204008FA782 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D13E16F39026AEBD6A8861D4 /* Pods_TealiumSKAdNetwork_Tests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1535CFA029644E4700605ED3 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				1535CFA129644E4700605ED3 /* SKAdNetworkInstanceTests.swift */,
+				1535CFA229644E4700605ED3 /* SKAdNetworkRemoteCommandTests.swift */,
+				1535CFA329644E4700605ED3 /* MockSKAdNetworkCommand.swift */,
+				1520113E296C2665005E8D89 /* ValueBitLimiterTests.swift */,
+			);
+			name = Tests;
+			path = ../Tests;
+			sourceTree = "<group>";
+		};
+		607FACC71AFB9204008FA782 = {
+			isa = PBXGroup;
+			children = (
+				607FACF51AFB993E008FA782 /* Podspec Metadata */,
+				607FACD21AFB9204008FA782 /* Example for TealiumSKAdNetwork */,
+				607FACD11AFB9204008FA782 /* Products */,
+				1535CFA029644E4700605ED3 /* Tests */,
+				AC52B3E7470D896260DA8465 /* Pods */,
+				B95193B51B9EC8B2A1E17815 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		607FACD11AFB9204008FA782 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				607FACD01AFB9204008FA782 /* TealiumSKAdNetwork_Example.app */,
+				607FACE51AFB9204008FA782 /* TealiumSKAdNetwork_Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		607FACD21AFB9204008FA782 /* Example for TealiumSKAdNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				15D3B3B62965D7AF0078A1B3 /* skadnetworkcommand.json */,
+				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
+				607FACDC1AFB9204008FA782 /* Images.xcassets */,
+				607FACD31AFB9204008FA782 /* Supporting Files */,
+				15D3B3B22965D5690078A1B3 /* AppView.swift */,
+				15D3B3B42965D64B0078A1B3 /* TealiumHelper.swift */,
+				15201140296C6C57005E8D89 /* StrategyListener.swift */,
+				15201142296C6CA3005E8D89 /* SimpleValueStrategyView.swift */,
+				15201144296C6CF4005E8D89 /* MoneyStrategyView.swift */,
+				15201146296C6D13005E8D89 /* JourneyStrategyView.swift */,
+				15201148296C6D36005E8D89 /* EventStrategyView.swift */,
+				1520114A296C6D53005E8D89 /* MixedEventsStepsStrategyView.swift */,
+				1520114C296C6D72005E8D89 /* MixedValueStepsStrategyView.swift */,
+			);
+			name = "Example for TealiumSKAdNetwork";
+			path = TealiumSKAdNetwork;
+			sourceTree = "<group>";
+		};
+		607FACD31AFB9204008FA782 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				607FACD41AFB9204008FA782 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
+			isa = PBXGroup;
+			children = (
+				5983D465C40791993758565F /* TealiumSKAdNetwork.podspec */,
+				A4093A49C598824990B2A561 /* README.md */,
+				CBCD4C7881E06C92AF3A68A4 /* LICENSE */,
+			);
+			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		AC52B3E7470D896260DA8465 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				55DDF07E15E0B09FBE9C0C53 /* Pods-TealiumSKAdNetwork_Example.debug.xcconfig */,
+				57B926D346CE92501CDBEA81 /* Pods-TealiumSKAdNetwork_Example.release.xcconfig */,
+				CC33D2D817027E7B04FEE794 /* Pods-TealiumSKAdNetwork_Tests.debug.xcconfig */,
+				385260D3CC445A799A0A26E6 /* Pods-TealiumSKAdNetwork_Tests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B95193B51B9EC8B2A1E17815 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7D66820781D18716ACA46210 /* Pods_TealiumSKAdNetwork_Example.framework */,
+				FFA31BC5B9B9E808844FE66D /* Pods_TealiumSKAdNetwork_Tests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		607FACCF1AFB9204008FA782 /* TealiumSKAdNetwork_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "TealiumSKAdNetwork_Example" */;
+			buildPhases = (
+				2AD2FD59C9E25CA0148A4570 /* [CP] Check Pods Manifest.lock */,
+				607FACCC1AFB9204008FA782 /* Sources */,
+				607FACCD1AFB9204008FA782 /* Frameworks */,
+				607FACCE1AFB9204008FA782 /* Resources */,
+				66C31C7F3A50B6F98142155E /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TealiumSKAdNetwork_Example;
+			productName = TealiumSKAdNetwork;
+			productReference = 607FACD01AFB9204008FA782 /* TealiumSKAdNetwork_Example.app */;
+			productType = "com.apple.product-type.application";
+		};
+		607FACE41AFB9204008FA782 /* TealiumSKAdNetwork_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "TealiumSKAdNetwork_Tests" */;
+			buildPhases = (
+				0DA0B97056430A8EE3A2ED19 /* [CP] Check Pods Manifest.lock */,
+				607FACE11AFB9204008FA782 /* Sources */,
+				607FACE21AFB9204008FA782 /* Frameworks */,
+				607FACE31AFB9204008FA782 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				607FACE71AFB9204008FA782 /* PBXTargetDependency */,
+			);
+			name = TealiumSKAdNetwork_Tests;
+			productName = Tests;
+			productReference = 607FACE51AFB9204008FA782 /* TealiumSKAdNetwork_Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		607FACC81AFB9204008FA782 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = CocoaPods;
+				TargetAttributes = {
+					607FACCF1AFB9204008FA782 = {
+						CreatedOnToolsVersion = 6.3.1;
+						LastSwiftMigration = 0900;
+					};
+					607FACE41AFB9204008FA782 = {
+						CreatedOnToolsVersion = 6.3.1;
+						LastSwiftMigration = 1410;
+						TestTargetID = 607FACCF1AFB9204008FA782;
+					};
+				};
+			};
+			buildConfigurationList = 607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "TealiumSKAdNetwork" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				en,
+				Base,
+			);
+			mainGroup = 607FACC71AFB9204008FA782;
+			productRefGroup = 607FACD11AFB9204008FA782 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				607FACCF1AFB9204008FA782 /* TealiumSKAdNetwork_Example */,
+				607FACE41AFB9204008FA782 /* TealiumSKAdNetwork_Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		607FACCE1AFB9204008FA782 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
+				15D3B3B72965D7AF0078A1B3 /* skadnetworkcommand.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		607FACE31AFB9204008FA782 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0DA0B97056430A8EE3A2ED19 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TealiumSKAdNetwork_Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2AD2FD59C9E25CA0148A4570 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TealiumSKAdNetwork_Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		66C31C7F3A50B6F98142155E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TealiumSKAdNetwork_Example/Pods-TealiumSKAdNetwork_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/TealiumSKAdNetwork/TealiumSKAdNetwork.framework",
+				"${BUILT_PRODUCTS_DIR}/tealium-swift/TealiumSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TealiumSKAdNetwork.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TealiumSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TealiumSKAdNetwork_Example/Pods-TealiumSKAdNetwork_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		607FACCC1AFB9204008FA782 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15201145296C6CF4005E8D89 /* MoneyStrategyView.swift in Sources */,
+				1520114D296C6D72005E8D89 /* MixedValueStepsStrategyView.swift in Sources */,
+				1520114B296C6D53005E8D89 /* MixedEventsStepsStrategyView.swift in Sources */,
+				15D3B3B32965D5690078A1B3 /* AppView.swift in Sources */,
+				15201149296C6D36005E8D89 /* EventStrategyView.swift in Sources */,
+				15D3B3B52965D64B0078A1B3 /* TealiumHelper.swift in Sources */,
+				15201143296C6CA3005E8D89 /* SimpleValueStrategyView.swift in Sources */,
+				15201141296C6C57005E8D89 /* StrategyListener.swift in Sources */,
+				15201147296C6D13005E8D89 /* JourneyStrategyView.swift in Sources */,
+				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		607FACE11AFB9204008FA782 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1535CFAB29644E5700605ED3 /* MockSKAdNetworkCommand.swift in Sources */,
+				1535CFA929644E5700605ED3 /* SKAdNetworkInstanceTests.swift in Sources */,
+				1520113F296C2665005E8D89 /* ValueBitLimiterTests.swift in Sources */,
+				1535CFAA29644E5700605ED3 /* SKAdNetworkRemoteCommandTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		607FACE71AFB9204008FA782 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 607FACCF1AFB9204008FA782 /* TealiumSKAdNetwork_Example */;
+			targetProxy = 607FACE61AFB9204008FA782 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		607FACED1AFB9204008FA782 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		607FACEE1AFB9204008FA782 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		607FACF01AFB9204008FA782 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55DDF07E15E0B09FBE9C0C53 /* Pods-TealiumSKAdNetwork_Example.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TealiumSKAdNetwork/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MODULE_NAME = ExampleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		607FACF11AFB9204008FA782 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57B926D346CE92501CDBEA81 /* Pods-TealiumSKAdNetwork_Example.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TealiumSKAdNetwork/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MODULE_NAME = ExampleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		607FACF31AFB9204008FA782 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC33D2D817027E7B04FEE794 /* Pods-TealiumSKAdNetwork_Tests.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ../Tests/Support/info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TealiumSKAdNetwork_Example.app/TealiumSKAdNetwork_Example";
+			};
+			name = Debug;
+		};
+		607FACF41AFB9204008FA782 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 385260D3CC445A799A0A26E6 /* Pods-TealiumSKAdNetwork_Tests.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ../Tests/Support/info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TealiumSKAdNetwork_Example.app/TealiumSKAdNetwork_Example";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "TealiumSKAdNetwork" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				607FACED1AFB9204008FA782 /* Debug */,
+				607FACEE1AFB9204008FA782 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "TealiumSKAdNetwork_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				607FACF01AFB9204008FA782 /* Debug */,
+				607FACF11AFB9204008FA782 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "TealiumSKAdNetwork_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				607FACF31AFB9204008FA782 /* Debug */,
+				607FACF41AFB9204008FA782 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 607FACC81AFB9204008FA782 /* Project object */;
+}
