@@ -18,12 +18,15 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-  Tealium's integration with Apple SKAdNetwork
+  Tealium's integration with Apple's SKAdNetwork
                        DESC
 
   s.homepage         = 'https://github.com/Tealium/tealium-ios-skadnetwork-remote-command'
   s.license          = { :type => "Commercial", :file => "LICENSE" }
-  s.author           = { "Tealium Inc." => "tealium@tealium.com" }
+  s.authors            = { "Tealium Inc." => "tealium@tealium.com",
+                           "craigrouse"   => "craig.rouse@tealium.com",
+                           "enricozannini" => "enrico.zannini@tealium.com",
+                           "tylerrister" => "tyler.rister@tealium.com" }
   s.source           = { :git => 'https://github.com/Tealium/tealium-ios-skadnetwork-remote-command.git', :tag => "#{s.version}" }
   s.social_media_url   = "https://twitter.com/tealium"
   s.swift_version = "5.0"
