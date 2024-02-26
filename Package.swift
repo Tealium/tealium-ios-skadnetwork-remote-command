@@ -4,13 +4,13 @@ import PackageDescription
 let package = Package(
     name: "TealiumSKAdNetwork",
     platforms: [
-        .iOS(.v11)
+        .iOS(.v12)
     ],
     products: [
         .library(name: "TealiumSKAdNetwork", targets: ["TealiumSKAdNetwork"])
     ],
     dependencies: [
-        .package(name: "TealiumSwift", url: "https://github.com/tealium/tealium-swift", .upToNextMajor(from: "2.9.0"))
+        .package(name: "TealiumSwift", url: "https://github.com/tealium/tealium-swift", .upToNextMajor(from: "2.12.0"))
     ],
     targets: [
         .target(

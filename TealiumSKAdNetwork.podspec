@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TealiumSKAdNetwork'
-  s.version          = '1.0.0'
+  s.version          = '1.1.0'
   s.summary          = 'Tealium Swift and SKAdNetwork integration'
 
 # This description is used to generate tags and improve search results.
@@ -30,10 +30,10 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/Tealium/tealium-ios-skadnetwork-remote-command.git', :tag => "#{s.version}" }
   s.social_media_url   = "https://twitter.com/tealium"
   s.swift_version = "5.0"
-  s.ios.deployment_target = '11.0'
+  s.ios.deployment_target = '12.0'
 
   s.source_files = 'Sources/*.{swift}'
   
-  s.ios.dependency 'tealium-swift/Core', '~> 2.9'
-  s.ios.dependency 'tealium-swift/RemoteCommands', '~> 2.9'
+  s.ios.dependency 'tealium-swift/Core', '~> 2.12'
+  s.ios.dependency 'tealium-swift/RemoteCommands', '~> 2.12'
 end

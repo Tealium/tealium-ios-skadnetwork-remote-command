@@ -116,6 +116,8 @@ xcuserdata
 !*.xcodeproj/xcshareddata/
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
+*.xcframework
+*.xcframework.zip
 
 ### Xcode Patch ###
 **/xcshareddata/WorkspaceSettings.xcsettings
