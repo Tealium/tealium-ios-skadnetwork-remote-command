@@ -12,7 +12,7 @@ enum SKADNetworkConstants {
     static let commandId = "skadnetwork"
     static let description = "SKAdNetwork Remote Command"
     static let commandName = "command_name"
-    static let version = "1.0.0"
+    static let version = "1.1.0"
     static let seperator: Character = ","
 
     struct Commands {
@@ -42,7 +42,7 @@ public struct ConversionData: Codable, Equatable {
         case medium
         case low
 
-        @available(iOS 16.0, *)
+        @available(iOS 16.1, *)
         var toSKAdValue: SKAdNetwork.CoarseConversionValue {
             switch self {
             case .high: return .high
