@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -41,8 +41,8 @@
 		1535CF802964494E00605ED3 /* SKAdNetworkRemoteCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SKAdNetworkRemoteCommand.swift; path = Sources/SKAdNetworkRemoteCommand.swift; sourceTree = "<group>"; };
 		1535CF812964494F00605ED3 /* SKADNetworkConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SKADNetworkConstants.swift; path = Sources/SKADNetworkConstants.swift; sourceTree = "<group>"; };
 		1535CF822964494F00605ED3 /* UserDefaults+ConversionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UserDefaults+ConversionData.swift"; path = "Sources/UserDefaults+ConversionData.swift"; sourceTree = "<group>"; };
-		1535CF94296449AF00605ED3 /* TealiumCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TealiumCore.xcframework; path = Carthage/Build/TealiumCore.xcframework; sourceTree = "<group>"; };
-		1535CF95296449AF00605ED3 /* TealiumRemoteCommands.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TealiumRemoteCommands.xcframework; path = Carthage/Build/TealiumRemoteCommands.xcframework; sourceTree = "<group>"; };
+		1535CF94296449AF00605ED3 /* TealiumCore.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:XC939GDC9P:Tealium"; lastKnownFileType = wrapper.xcframework; name = TealiumCore.xcframework; path = Carthage/Build/TealiumCore.xcframework; sourceTree = "<group>"; };
+		1535CF95296449AF00605ED3 /* TealiumRemoteCommands.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:XC939GDC9P:Tealium"; lastKnownFileType = wrapper.xcframework; name = TealiumRemoteCommands.xcframework; path = Carthage/Build/TealiumRemoteCommands.xcframework; sourceTree = "<group>"; };
 		1535CF9829644A8200605ED3 /* SKAdNetworkInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SKAdNetworkInstance.swift; path = Sources/SKAdNetworkInstance.swift; sourceTree = "<group>"; };
 		1535CFAC29644FAB00605ED3 /* SKAdNetworkInstanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SKAdNetworkInstanceTests.swift; path = Tests/SKAdNetworkInstanceTests.swift; sourceTree = "<group>"; };
 		1535CFAD29644FAB00605ED3 /* SKAdNetworkRemoteCommandTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SKAdNetworkRemoteCommandTests.swift; path = Tests/SKAdNetworkRemoteCommandTests.swift; sourceTree = "<group>"; };
