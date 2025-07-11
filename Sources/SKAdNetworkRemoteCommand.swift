@@ -25,7 +25,7 @@ public class SKAdNetworkRemoteCommand: RemoteCommand {
     public var conversionData: ConversionData {
         instance.conversionData
     }
-    public init(instance: SKAdNetworkCommand? = nil, type: RemoteCommandType, delegate: SKAdNetworkConversionDelegate?) {
+    public init(instance: SKAdNetworkCommand? = nil, type: RemoteCommandType = .webview, delegate: SKAdNetworkConversionDelegate?) {
         self.instance = instance ?? SKAdNetworkInstance(conversionDelegate: delegate)
         weak var weakSelf: SKAdNetworkRemoteCommand?
         super.init(commandId: SKADNetworkConstants.commandId, description: SKADNetworkConstants.description, type: type) { response in

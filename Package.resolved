@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/tealium/tealium-swift",
         "state": {
           "branch": null,
-          "revision": "97d779d310c14149b4bd24ccd3918d9aadec4db3",
-          "version": "2.9.1"
+          "revision": "0dad26baa86977fa9464494beac4c82f75c1b1ff",
+          "version": "2.18.0"
         }
       }
     ]
