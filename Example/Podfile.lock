@@ -1,14 +1,14 @@
 PODS:
-  - tealium-swift/Collect (2.14.0):
+  - tealium-swift/Collect (2.18.0):
     - tealium-swift/Core
-  - tealium-swift/Core (2.14.0)
-  - tealium-swift/Lifecycle (2.14.0):
+  - tealium-swift/Core (2.18.0)
+  - tealium-swift/Lifecycle (2.18.0):
     - tealium-swift/Core
-  - tealium-swift/RemoteCommands (2.14.0):
+  - tealium-swift/RemoteCommands (2.18.0):
     - tealium-swift/Core
-  - TealiumSKAdNetwork (1.1.0):
-    - tealium-swift/Core (~> 2.12)
-    - tealium-swift/RemoteCommands (~> 2.12)
+  - TealiumSKAdNetwork (1.2.0):
+    - tealium-swift/Core (~> 2.18)
+    - tealium-swift/RemoteCommands (~> 2.18)
 
 DEPENDENCIES:
   - tealium-swift/Collect
@@ -24,9 +24,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  tealium-swift: d2a1f3ee12f3a0aa759ab43c07005b24148b6f75
-  TealiumSKAdNetwork: ff2af15df065531052409c86779e86fc0d07a715
+  tealium-swift: 891b7d27a4aa3e8b3c7398ac536382526ad215fc
+  TealiumSKAdNetwork: 03ecf7bd82163008c3282ea63fb54457bd0f59bf
 
 PODFILE CHECKSUM: 09441e3ee98311fe263ab8d7e65a7fa6e38996e3
 
-COCOAPODS: 1.15.2
+COCOAPODS: 1.16.2
