@@ -20,6 +20,7 @@
 		1535CFAF29644FAB00605ED3 /* SKAdNetworkInstanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1535CFAC29644FAB00605ED3 /* SKAdNetworkInstanceTests.swift */; };
 		1535CFB029644FAB00605ED3 /* SKAdNetworkRemoteCommandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1535CFAD29644FAB00605ED3 /* SKAdNetworkRemoteCommandTests.swift */; };
 		1535CFB129644FAB00605ED3 /* MockSKAdNetworkCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1535CFAE29644FAB00605ED3 /* MockSKAdNetworkCommand.swift */; };
+		9EE2CBD72E37A35C00F9A130 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 9EE2CBD62E37A35C00F9A130 /* PrivacyInfo.xcprivacy */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		1535CFAD29644FAB00605ED3 /* SKAdNetworkRemoteCommandTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SKAdNetworkRemoteCommandTests.swift; path = Tests/SKAdNetworkRemoteCommandTests.swift; sourceTree = "<group>"; };
 		1535CFAE29644FAB00605ED3 /* MockSKAdNetworkCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockSKAdNetworkCommand.swift; path = Tests/MockSKAdNetworkCommand.swift; sourceTree = "<group>"; };
 		1535CFB229644FB300605ED3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tests/Support/Info.plist; sourceTree = "<group>"; };
+		9EE2CBD62E37A35C00F9A130 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = Sources/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 		1535CF55296447EB00605ED3 = {
 			isa = PBXGroup;
 			children = (
+				9EE2CBD62E37A35C00F9A130 /* PrivacyInfo.xcprivacy */,
 				1535CF7D2964492000605ED3 /* TealiumSKAdNetwork */,
 				1535CF7E2964492E00605ED3 /* TealiumSKAdNetworkTests */,
 				1535CF932964497C00605ED3 /* Frameworks */,
@@ -218,6 +221,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EE2CBD72E37A35C00F9A130 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
