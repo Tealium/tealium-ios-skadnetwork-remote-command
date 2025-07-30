@@ -19,7 +19,10 @@ let package = Package(
                 .product(name: "TealiumCore", package: "TealiumSwift"),
                 .product(name: "TealiumRemoteCommands", package: "TealiumSwift")
             ],
-            path: "./Sources"),
+            path: "./Sources",
+            resources: [
+                .process("PrivacyInfo.xcprivacy")
+            ]),
         .testTarget(
             name: "TealiumSKAdNetworkTests",
             dependencies: ["TealiumSKAdNetwork"],

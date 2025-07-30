@@ -12,7 +12,7 @@ enum SKADNetworkConstants {
     static let commandId = "skadnetwork"
     static let description = "SKAdNetwork Remote Command"
     static let commandName = "command_name"
-    static let version = "1.2.0"
+    static let version = "1.2.1"
     static let seperator: Character = ","
 
     struct Commands {
