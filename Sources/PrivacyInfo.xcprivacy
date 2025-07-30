@@ -13,5 +13,7 @@
 			<string>NSPrivacyAccessedAPICategoryUserDefaults</string>
 		</dict>
 	</array>
+	<key>NSPrivacyCollectedDataTypes</key>
+	<array/>
 </dict>
 </plist>
