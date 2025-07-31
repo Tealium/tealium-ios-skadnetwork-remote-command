@@ -6,7 +6,7 @@ PODS:
     - tealium-swift/Core
   - tealium-swift/RemoteCommands (2.18.0):
     - tealium-swift/Core
-  - TealiumSKAdNetwork (1.2.0):
+  - TealiumSKAdNetwork (1.2.1):
     - tealium-swift/Core (~> 2.18)
     - tealium-swift/RemoteCommands (~> 2.18)
 
@@ -25,7 +25,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   tealium-swift: 891b7d27a4aa3e8b3c7398ac536382526ad215fc
-  TealiumSKAdNetwork: 03ecf7bd82163008c3282ea63fb54457bd0f59bf
+  TealiumSKAdNetwork: 1a3649851758398de65d6ddc576ca28241df5d93
 
 PODFILE CHECKSUM: 09441e3ee98311fe263ab8d7e65a7fa6e38996e3
 
