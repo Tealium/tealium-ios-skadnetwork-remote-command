@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TealiumSKAdNetwork'
-  s.version          = '1.2.0'
+  s.version          = '1.2.1'
   s.summary          = 'Tealium Swift and SKAdNetwork integration'
 
 # This description is used to generate tags and improve search results.
@@ -33,6 +33,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '12.0'
 
   s.source_files = 'Sources/*.{swift}'
+  s.resource_bundles = { "TealiumSKAdNetwork" => "Sources/PrivacyInfo.xcprivacy" }
   
   s.ios.dependency 'tealium-swift/Core', '~> 2.18'
   s.ios.dependency 'tealium-swift/RemoteCommands', '~> 2.18'
